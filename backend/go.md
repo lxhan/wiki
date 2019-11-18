@@ -19,7 +19,7 @@ workspace
 
 1. String
 
-   ```
+   ```go
    var name string = "Alex"
    var name = "Alex"
    name := "Alex"
@@ -27,7 +27,7 @@ workspace
 
 2. Integer
 
-   ```
+   ```go
    var age int = 32
    var age = 32
    age := 32
@@ -35,7 +35,7 @@ workspace
 
 3. Boolean
 
-   ```
+   ```go
    var isMarried bool = true
    var isMarried = true
    const isMarried = true
@@ -44,7 +44,7 @@ workspace
 
 4. Float
 
-   ```
+   ```go
    var size float32 = 1.3
    var size = 1.3
    size := 1.3
@@ -52,27 +52,27 @@ workspace
 
 5. Shorthand for multiple vars assignment
 
-   ```
+   ```go
    name, age := "Alex", 32
    ```
 
 6. Shorthand for var
 
-   ```
+   ```go
    name := "Alex"
    // Must be inside body
    ```
 
 7. Get type of variable
 
-   ```
+   ```go
    fmt.Println("%T\n", name)
    // ouputs "string"
    ```
 
 ## Functions
 
-```
+```go
 func greet(name string) string {
   return "Hello, " + name
 }
@@ -82,26 +82,26 @@ func greet(name string) string {
 
 1. Arrays
 
-   ```
+   ```go
    var nameArr \[2\]string
 
     // Declare and assign nameArr := \[2\]string{"Alex", "Lena"}
 
     ```
 2. Slices
-```
+```go
 nameSlice := []string{"Alex", "Lena", "etc"}
 ```
 
 1. Get array/slice length
 
-   ```
+   ```go
    len(arr)
    ```
 
 2. Range
 
-   ```
+   ```go
    arr[1:3]
    ```
 
@@ -109,7 +109,7 @@ nameSlice := []string{"Alex", "Lena", "etc"}
 
 1. if/else
 
-```
+```go
 if x < y {
   fmt.Println("x is less than y")
 } else if x > y {
@@ -121,7 +121,7 @@ if x < y {
 
 1. switch
 
-   ```
+   ```go
    switch color {
    case "blue":
     //
@@ -136,7 +136,7 @@ if x < y {
 
 1. Long method
 
-   ```
+   ```go
    i := 1
    for i <= 10 {
    // do smth
@@ -145,7 +145,7 @@ if x < y {
 
 2. Short method
 
-   ```
+   ```go
    for i := 1; i <= 10; i++ {
    // do smth
    }
@@ -153,7 +153,7 @@ if x < y {
 
 3. FizzBuzz
 
-   ```
+   ```go
    for i := 1; i <= 100; i++ {
    if i % 15 == 0 {
     fmt.Println("FizzBuzz")
@@ -171,32 +171,32 @@ if x < y {
 
 1. Define map
 
-   ```
+   ```go
    emails := make(map[string]string)
    ```
 
 2. Assign key values
 
-   ```
+   ```go
    emails["alex"] = "alex@gmail.com"
    emails["lena"] = "lena@gmail.com"
    ```
 
 3. Get length
 
-   ```
+   ```go
    len(emails)
    ```
 
 4. Delete from map
 
-   ```
+   ```go
    delete(emails, "alex")
    ```
 
 5. Shorthand for defining and declaring
 
-   ```
+   ```go
    emails := map[string]string{"alex":"alex@gmail.com"}
    ```
 
@@ -212,13 +212,13 @@ if x < y {
 
     ```
 2. Loop without index
-```
-ids := []int{3, 44, 6, 23, 1, 283}
+    ```go
+    ids := []int{3, 44, 6, 23, 1, 283}
 
-for _, id := range ids {
-  fmt.Printf("id: %d\n", id)
-}
-```
+    for _, id := range ids {
+      fmt.Printf("id: %d\n", id)
+    }
+    ```
 
 1. Loop through map
 
@@ -226,15 +226,15 @@ for _, id := range ids {
 
    emails := map\[string\]string{"alex":"alex@gmail.com", "lena":"lena@gmail.com"}
 
-for k, v := range emails { fmt.Printf\("%s: %s\n", k, v\) }
+    for k, v := range emails { fmt.Printf\("%s: %s\n", k, v\) }
 
-```
+    ```
 ___
 
 ## Pointers
 
 1. Declare pointer 
-```
+```go
 a := 5
 b := &a
 
@@ -244,27 +244,27 @@ fmt.Println(*b)
 
 1. Get type of pointer
 
-   ```
+   ```go
    fmt.Printf("%T\n", b)
    ```
 
 2. Use \* to read value from address
 
-   ```
+   ```go
    fmt.Println(*b)
    fmt.Println(*&a)
    ```
 
 3. Change value with pointer
 
-   ```
+   ```go
    *b = 10
    fmt.Println(a)
    ```
 
 ## Closure
 
-```
+```go
 func adder() func(int) int {
   sum := 0
   return func(x int) int {
@@ -285,7 +285,7 @@ func main() {
 
 1. Basic struct
 
-   ```
+   ```go
    type Person struct {
    firstName string
    lastName string
@@ -295,26 +295,26 @@ func main() {
 
 2. Create new struct
 
-   ```
+   ```go
    person := Person{firstName: "Alex", lastName: "Han", age: 32}
    ```
 
 3. Shorthand for new struct
 
-   ```
+   ```go
    person := Person{"Alex", "Han", 32}
    ```
 
 4. Get property
 
-   ```
+   ```go
    person.lastName
    person.lastName = "Smith"
    ```
 
 5. Value reciever
 
-   ```
+   ```go
    func (p Person) greet() string {
    return "Hello, my name is " + p.firstName + "my age is " + strconv.Itoa(p.age)
    }
@@ -322,16 +322,17 @@ func main() {
 
 6. Pointer reciever
 
-   ```go func \(p \*Person\) getOld\(\) { p.age++ }
+   ```go 
+    func \(p \*Person\) getOld\(\) { p.age++ }
 
-func \(p \*Person\) changeName\(newName string\) { p.firstName = newName }
+    func \(p \*Person\) changeName\(newName string\) { p.firstName = newName }
 
-```
+    ```
 ___
 
 ## Interfaces
 
-```
+```go
 type Shape interface {
   area() float64
 }
@@ -351,7 +352,7 @@ func getArea(s Shape) float64 {
 
 ## Web
 
-```
+```go
 import (
   "fmt"
   "net/http"
