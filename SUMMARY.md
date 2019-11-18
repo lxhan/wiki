@@ -9,12 +9,12 @@
 * [Void](Void.md)
 
 ## Frontend
-[CSS](CSS.md)
-[JavaScript](JavaScript.md)
+* [CSS](CSS.md)
+* [JavaScript](JavaScript.md)
 
 ## Backend
 * [Python](python.md)
 * [Go](Go.md)
 
 ## Programming
-[Regular expressions](regular_expressions.md)
+* [Regular expressions](regular_expressions.md)
