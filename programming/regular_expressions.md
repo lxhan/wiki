@@ -5,7 +5,7 @@
 | Regex | Explanation | Example |
 | :--- | :--- | :--- |
 | \[abc\] | Matches any of the included characters | **\[Y9!\]** matches: I am `9` years old `Y`ay`!` |
-|  | Matches any characters NOT specified in brackets |  matches: `p`u`mpk`i`ns` a`r`e o`r`a`ng`e |
+| \[^abc\] | Matches any characters NOT specified in brackets |  matches: `p`u`mpk`i`ns` a`r`e o`r`a`ng`e |
 | \[a-z\] | Matches any characters within specific range | **\[1-3a-c\]** matches: 76`a321bca`9z |
 | . | Matches any character except linebreaks | **.**  matches: `hello world 3342` |
 | \w | Matches any word character, equivalent to \[A-Za-z0-9\_\] | **\w** matches: `Regexps are amazing`!!! |
