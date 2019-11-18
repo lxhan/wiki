@@ -1,11 +1,20 @@
 # Table of contents
 
 ## Unix
-* [SSH key](ssh-key.md)
-* [Terminal hotkeys](term-hotkeys.md)
-* [Keboard layout](keyboard-layout.md)
-* [Terminal tips & tricks](terminal-tips-tricks.md)
+* [SSH key](ssh_key.md)
+* [Terminal hotkeys](term_hotkeys.md)
+* [Keboard layout](keyboard_layout.md)
+* [Terminal tips & tricks](terminal_tips_tricks.md)
 * [URxvt](URxvt.md)
 * [Void](Void.md)
 
-## JS
+## Frontend
+[CSS](CSS.md)
+[JavaScript](JavaScript.md)
+
+## Backend
+* [Python](python.md)
+* [Go](Go.md)
+
+## Programming
+[Regular expressions](regular_expressions.md)
