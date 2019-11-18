@@ -1,7 +1,7 @@
 # Table of contents
 
 ## Unix
-* [ssh key](unix/ssh-key.md)
+* [SSH key](unix/ssh-key.md)
 
 ## JS
 
