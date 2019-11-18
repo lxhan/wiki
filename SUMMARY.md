@@ -1,11 +1,7 @@
 # Table of contents
 
 ## Unix
-* [SSH key](unix/ssh-key.md)
-* [Terminal hotkeys](unix/terminal-hotkeys.md)
+* [SSH key](SSH-key.md)
+* [Terminal hotkeys](Terminal-hotkeys.md)
 
 ## JS
-
-* [React](js/react.md)
-* [Vue](Vue)
-
