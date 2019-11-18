@@ -9,5 +9,8 @@
 3. Add ssh key to ssh-agent
 `ssh-add ~/.ssh/id_rsa`
 
-4. Add to git account
+4. Copy to clipboard (linux)
 `xclip -sel clip < ~/.ssh/id_rsa.pub`
+
+5. Copy to clipboard (mac)
+`pbcopy < ~/.ssh/id_rsa.pub`
