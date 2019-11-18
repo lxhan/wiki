@@ -1,10 +1,10 @@
 # Table of contents
 
 ## Unix
-* [SSH key](SSH-key.md)
-* [Terminal hotkeys](Terminal-hotkeys.md)
-* [Keboard layout](Keboard layout)
-* [Terminal tips & tricks](Terminal tips & tricks)
+* [SSH key](ssh-key.md)
+* [Terminal hotkeys](terminal-hotkeys.md)
+* [Keboard layout](keyboard-layout.md)
+* [Terminal tips & tricks](terminal-tips-tricks.md)
 * [URxvt](URxvt)
 * [Void](Void)
 
