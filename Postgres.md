@@ -81,7 +81,30 @@ SELECT first_name, COUNT(*) FROM table GROUP BY first_name HAVING COUNT(*) > 2 O
 
 - Aggregate functions
 ```sql
+-- count
 SELECT first_name, COUNT(*) FROM table GROUP BY first_name ORDER BY count DESC;
 SELECT first_name, COUNT(*) FROM table GROUP BY first_name HAVING COUNT(*) > 2 ORDER BY count DESC;
+-- max, min, avg
+SELECT MAX(price) FROM car;
+SELECT MIN(price) FROM car;
+SELECT AVG(price) FROM car;
+-- round result
+SELECT ROUND(AVG(price)) FROM car;
+-- sum
+SELECT SUM(price) FROM car;
+SELECT make, SUM(price) FROM car GROUP BY make;
 ```
 
+- Basic arithmetic
+```sql
+-- show rounded car price and 10% of the price and car price minus 10%
+SELECT *, ROUND(price * .10, 2), ROUND(price - (price * .10), 2) FROM car;
+-- same with aliases
+SELECT *, ROUND(price * .10, 2) AS ten_percent, ROUND(price - (price * .10), 2) AS sale_price FROM car;
+```
+
+- Coalesce
+```sql
+-- ignore null values or substitute them with provided value
+SELECT COALESCE(email, 'no email') FROM person;
+```
