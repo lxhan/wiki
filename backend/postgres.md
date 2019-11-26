@@ -13,7 +13,13 @@ createdb test
 psql test
 ```
 
-- Init db from file
+- Start/stop postgres on Ubuntu
+```sh
+sudo service postgresql start
+sudo service postgresql stop 
+```
+
+- Create db from file
 ```sh
 psql
 \i /path/to/db/file.sql
@@ -33,6 +39,27 @@ psql -h localhost -p 5432 -U user db
 | `>=`         | greater than or equal |   |
 | `=`          | equal                 |   |
 | `<>` or `!=` | not equal             |   |
+
+## Frequently used commands in psql mode
+```sh
+# list roles
+\du
+
+# list tables
+\dt
+
+# list dbs
+\l
+
+# describe table, view, sequence
+\d table_name
+
+# connect to db
+\c db_name
+
+# quit
+\q
+```
 
 
 ## Queries
@@ -107,4 +134,14 @@ SELECT *, ROUND(price * .10, 2) AS ten_percent, ROUND(price - (price * .10), 2) 
 ```sql
 -- ignore null values or substitute them with provided value
 SELECT COALESCE(email, 'no email') FROM person;
+```
+
+- Install uuid extension
+```sql
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+```
+
+- Insert with unique id
+```sql
+INSERT INTO person(id, name) values (uuid_generate_v1(), 'John', 'Snow');
 ```
