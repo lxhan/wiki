@@ -145,3 +145,15 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 ```sql
 INSERT INTO person(id, name) values (uuid_generate_v1(), 'John', 'Snow');
 ```
+
+- Null
+```sql
+SELECT COALESCE(10 / NULLIF(0, 0), 0);
+```
+
+- Timestamps
+```sql
+SELECT NOW();
+SELECT NOW()::DATA;
+SELECT NOW()::TIME;
+```
