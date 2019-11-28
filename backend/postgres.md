@@ -157,3 +157,32 @@ SELECT NOW();
 SELECT NOW()::DATA;
 SELECT NOW()::TIME;
 ```
+
+- Arithmetic with dates
+```sql
+SELECT NOW() - INTERVAL '1 YEAR';
+SELECT NOW() - INTERVAL '10 MONTHS';
+SELECT NOW() + INTERVAL '100 DAYS';
+SELECT (NOW() + INTERVAL '100 DAYS')::DATE;
+```
+
+- Extract part of a date
+```sql
+SELECT EXTRACT(YEAR FROM NOW());
+```
+
+- Age function
+```sql
+SELECT *, AGE(NOW(), date_of_birth) AS age FROM person;
+```
+
+- Remove primary key constraint
+```sql
+ALTER TABLE person DROP CONSTRAINT person_pkey;
+```
+
+- Add primary key
+```sql
+DELETE FROM person WHERE id = 1;
+ALTER TABLE person ADD PRIMARY KEY (id);
+```
