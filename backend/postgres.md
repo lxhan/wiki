@@ -57,6 +57,15 @@ psql -h localhost -p 5432 -U user db
 # connect to db
 \c db_name
 
+# list of functions
+\df
+
+# list of extensions
+\dx
+
+# expanded display
+\x
+
 # quit
 \q
 ```
@@ -136,8 +145,15 @@ SELECT *, ROUND(price * .10, 2) AS ten_percent, ROUND(price - (price * .10), 2) 
 SELECT COALESCE(email, 'no email') FROM person;
 ```
 
-- Install uuid extension
+- Extensions 
 ```sql
+-- list installed extensions
+SELECT * FROM pg_extension;
+
+-- list available extensions
+SELECT * FROM pg_available_extensions;
+
+-- uuid
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 ```
 
@@ -185,4 +201,108 @@ ALTER TABLE person DROP CONSTRAINT person_pkey;
 ```sql
 DELETE FROM person WHERE id = 1;
 ALTER TABLE person ADD PRIMARY KEY (id);
+```
+
+- Add/remove unique constraint
+```sql
+ALTER TABLE person ADD CONSTRAINT unique_email UNIQUE (email);
+ALTER TABLE person ADD UNIQUE (email);
+ALTER TABLE person DROP CONSTRAINT unique_email; 
+```
+
+- Check constraints
+```sql
+ALTER TABLE person ADD CONSTRAINT check_gender CHECK (gender = 'Female' OR gender = 'Male');
+```
+
+- Delete
+```sql 
+DELETE FROM person WHERE id = 12;
+```
+
+- Update
+```sql
+UPDATE person SET name = 'test', email = 'test@test.com' WHERE id = 12;
+```
+
+- Conflict
+```sql
+INSERT INTO person (id, name, email) VALUES (11, 'Chandler', 'bing@bing.com') ON CONFLICT (id) DO NOTHING;
+INSERT INTO person (id, name, email) VALUES (11, 'Chandler', 'bing@bing.com') ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, email = EXCLUDED.email;
+```
+
+- Relations
+```sql
+CREATE TABLE customers (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    email VARCHAR(100) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    date_of_birth DATE NOT NULL,
+    country VARCHAR(50) NOT NULL,
+    phone_number VARCHAR(50),
+    address TEXT,
+    UNIQUE(email)
+);
+
+CREATE TABLE orders (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    brand VARCHAR(100) NOT NULL,
+    category VARCHAR(100) NOT NULL,
+    customer_id BIGINT REFERENCES customers (id),
+    UNIQUE(customer_id)
+)
+```
+
+- Update foreign keys
+```sql
+UPDATE orders SET customer_id = 3 WHERE id = 1;
+```
+
+- Inner joins
+```sql
+SELECT * FROM orders JOIN customers ON orders.customer_id = customers.id;
+SELECT * FROM orders JOIN customers USING (customer_uid);
+```
+
+- Left joins
+```sql
+SELECT * FROM orders LEFT JOIN customers ON orders.customer_id = customers.id;
+SELECT * FROM orders LEFT JOIN customers ON orders.customer_id = customers.id WHERE customers.* IS NULL;
+```
+
+- Export to csv 
+```sh
+\copy (SELECT * FROM orders LEFT JOIN customers ON orders.customer_id = customers.id) TO '~/Documents/orders.csv' DELIMITER ',' CSV HEADER;
+```
+
+- Serial and sequences
+```sql
+SELECT * FROM orders_id_seq;
+ALTER SEQUENCE orders_id_seq RESTART WITH 5;
+```
+
+- UUID
+```sql
+CREATE TABLE customers (
+    customer_uid UUID NOT NULL PRIMARY KEY,
+    email VARCHAR(100) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    date_of_birth DATE NOT NULL,
+    country VARCHAR(50) NOT NULL,
+    phone_number VARCHAR(50),
+    address TEXT,
+    UNIQUE(email)
+);
+
+CREATE TABLE orders (
+    order_uid UUID NOT NULL PRIMARY KEY,
+    brand VARCHAR(100) NOT NULL,
+    category VARCHAR(100) NOT NULL,
+    customer_uid UUID REFERENCES customers (order_uid),
+    UNIQUE(customer_uid)
+)
+
+INSERT INTO orders (order_uid, brand, category) VALUES (uuid_generate_v4(), 'Dior', 'creme', 'aging');
 ```
