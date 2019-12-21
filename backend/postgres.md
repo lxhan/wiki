@@ -147,16 +147,12 @@ SELECT COALESCE(email, 'no email') FROM person;
 
 - Extensions 
 ```sql
-
 -- list installed extensions
 SELECT * FROM pg_extension;
-
 -- list available extensions
 SELECT * FROM pg_available_extensions;
-
 -- uuid
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
 ```
 
 - Insert with unique id
