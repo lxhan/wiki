@@ -147,6 +147,7 @@ SELECT COALESCE(email, 'no email') FROM person;
 
 - Extensions 
 ```sql
+
 -- list installed extensions
 SELECT * FROM pg_extension;
 
@@ -155,6 +156,7 @@ SELECT * FROM pg_available_extensions;
 
 -- uuid
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 ```
 
 - Insert with unique id
@@ -233,6 +235,7 @@ INSERT INTO person (id, name, email) VALUES (11, 'Chandler', 'bing@bing.com') ON
 
 - Relations
 ```sql
+
 CREATE TABLE customers (
     id BIGSERIAL NOT NULL PRIMARY KEY,
     email VARCHAR(100) NOT NULL,
@@ -252,6 +255,7 @@ CREATE TABLE orders (
     customer_id BIGINT REFERENCES customers (id),
     UNIQUE(customer_id)
 )
+
 ```
 
 - Update foreign keys
@@ -284,6 +288,7 @@ ALTER SEQUENCE orders_id_seq RESTART WITH 5;
 
 - UUID
 ```sql
+
 CREATE TABLE customers (
     customer_uid UUID NOT NULL PRIMARY KEY,
     email VARCHAR(100) NOT NULL,
@@ -305,4 +310,5 @@ CREATE TABLE orders (
 )
 
 INSERT INTO orders (order_uid, brand, category) VALUES (uuid_generate_v4(), 'Dior', 'creme', 'aging');
+
 ```

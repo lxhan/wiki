@@ -30,3 +30,8 @@ docker rm --force container_id
 ```sh
 docker exec -it container_id bash 
 ```
+
+- Copy file to container
+```sh
+docker cp ./localfile.sql containername:/container/path/file.sql
+```
