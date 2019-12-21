@@ -231,7 +231,6 @@ INSERT INTO person (id, name, email) VALUES (11, 'Chandler', 'bing@bing.com') ON
 
 - Relations
 ```sql
-
 CREATE TABLE customers (
     id BIGSERIAL NOT NULL PRIMARY KEY,
     email VARCHAR(100) NOT NULL,
@@ -243,7 +242,6 @@ CREATE TABLE customers (
     address TEXT,
     UNIQUE(email)
 );
-
 CREATE TABLE orders (
     id BIGSERIAL NOT NULL PRIMARY KEY,
     brand VARCHAR(100) NOT NULL,
@@ -251,7 +249,6 @@ CREATE TABLE orders (
     customer_id BIGINT REFERENCES customers (id),
     UNIQUE(customer_id)
 )
-
 ```
 
 - Update foreign keys
@@ -284,7 +281,6 @@ ALTER SEQUENCE orders_id_seq RESTART WITH 5;
 
 - UUID
 ```sql
-
 CREATE TABLE customers (
     customer_uid UUID NOT NULL PRIMARY KEY,
     email VARCHAR(100) NOT NULL,
@@ -296,7 +292,6 @@ CREATE TABLE customers (
     address TEXT,
     UNIQUE(email)
 );
-
 CREATE TABLE orders (
     order_uid UUID NOT NULL PRIMARY KEY,
     brand VARCHAR(100) NOT NULL,
@@ -304,7 +299,5 @@ CREATE TABLE orders (
     customer_uid UUID REFERENCES customers (order_uid),
     UNIQUE(customer_uid)
 )
-
 INSERT INTO orders (order_uid, brand, category) VALUES (uuid_generate_v4(), 'Dior', 'creme', 'aging');
-
 ```
