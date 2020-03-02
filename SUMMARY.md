@@ -22,6 +22,9 @@
 * [Postgres](backend/postgres.md)
 * [Docker](backend/docker.md)
 
+## Mobile
+[Swift](swift)
+
 ## Programming
 
 * [Regular expressions](programming/regular_expressions.md)
@@ -30,3 +33,4 @@
 ## Algorithms
 
 * [Big O](big_o.md)
+
