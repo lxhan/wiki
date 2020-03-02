@@ -17,7 +17,7 @@
 4. In a loop, the complexity is the length of the loop times the complexity of whatever happens inside of the loop
 
 ## Examples
-```js
+```javascript
 // O(1)
 const a = 2 + 3;
 
