@@ -5,7 +5,6 @@
 ## Unix
 
 * [SSH key](unix/ssh_key.md)
-* [Terminal hotkeys](unix/term_hotkeys.md)
 * [Keboard layout](unix/keyboard_layout.md)
 * [Terminal tips & tricks](unix/terminal_tips_tricks.md)
 * [URxvt](unix/urxvt.md)
