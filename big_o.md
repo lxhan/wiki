@@ -69,7 +69,7 @@ function search(value, list) {
    
     // O(n)
     while(!found && index < list.length) {
-        O(1) 
+        // O(1) 
         if (list[index] == value) {
             found = true;
             position = index;
