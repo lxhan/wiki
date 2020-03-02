@@ -6,7 +6,7 @@
 - Constant `O(1)` (ideal)
 - Logarithmic `O(log n)` (excellent)
 - Linear `O(n)` (ok)
-- Quadratic `O(n^2)` (meh)
+- Quadratic `O(n^2)` (bad)
 - Exponential `O(2^n)`
 - Factorial `O(n!)`
 
