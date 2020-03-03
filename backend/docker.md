@@ -1,5 +1,3 @@
-# Docker
-
 ### Basic commands to run a new container 
 - Pull postgres image
 ```sh
