@@ -112,7 +112,7 @@
 ```$ ssh-add /home/brad/.ssh/id_rsa_github```
 
 ## If you get a message about auth agent, run this and try again
-```$ eval `ssh-agent -s````
+```$ eval ssh-agent -s```
 
 ## Clone repo
 ```$ git clone git@github.com:bradtraversy/react_otka_auth.git```
