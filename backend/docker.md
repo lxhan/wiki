@@ -52,7 +52,7 @@ $ docker version
 $ docker info
 ```
 
-# WORKING WITH CONTAINERS
+# Working with containers
 
 ### Create an run a container in foreground
 
@@ -66,19 +66,13 @@ $ docker container run -it -p 80:80 nginx
 $ docker container run -d -p 80:80 nginx
 ```
 
-### Shorthand
-
-```
-$ docker container run -d -p 80:80 nginx
-```
-
 ### Naming Containers
 
 ```
 $ docker container run -d -p 80:80 --name nginx-server nginx
 ```
 
-### TIP: WHAT RUN DID
+### tip: what run did
 
 - Looked for image called nginx in image cache
 - If not found in cache, it looks to the default image repo on Dockerhub
@@ -94,7 +88,7 @@ $ docker container run -d -p 80:80 --name nginx-server nginx
 $ docker container ls
 ```
 
-OR
+or
 
 ```
 $ docker ps
@@ -154,11 +148,11 @@ $ docker container logs [NAME]
 $ docker container top [NAME]
 ```
 
-#### TIP: ABOUT CONTAINERS
+#### tip: about containers
 
 Docker containers are often compared to virtual machines but they are actually just processes running on your host os. In Windows/Mac, Docker runs in a mini-VM so to see the processes youll need to connect directly to that. On Linux however you can run "ps aux" and see the processes directly
 
-# IMAGE COMMANDS
+# Image commands
 
 ### List the images we have pulled
 
@@ -184,7 +178,7 @@ $ docker image rm [IMAGE]
 $ docker rmi $(docker images -a -q)
 ```
 
-#### TIP: ABOUT IMAGES
+#### tip: about images
 
 - Images are app bianaries and dependencies with meta data about the image data and how to run the image
 - Images are no a complete OS. No kernel, kernel modules (drivers)
@@ -216,7 +210,7 @@ MYSQL:
 $ docker container run -d -p 3306:3306 --name mysql --env MYSQL_ROOT_PASSWORD=123456 mysql
 ```
 
-## CONTAINER INFO
+## Container info
 
 ### View info on container
 
@@ -236,7 +230,7 @@ $ docker container inspect --format '{{ .NetworkSettings.IPAddress }}' [NAME]
 $ docker container stats [NAME]
 ```
 
-## ACCESSING CONTAINERS
+## Accessing containers
 
 ### Create new nginx container and bash into
 
@@ -288,7 +282,7 @@ $ docker container run -it alpine sh
 (use sh because it does not include bash)
 (alpine uses apk for its package manager - can install bash if you want)
 
-# NETWORKING
+# Networking
 
 ### "bridge" or "docker0" is the default network
 
@@ -341,7 +335,7 @@ $ docker network disconnect [NETWORK_NAME] [CONTAINER_NAME]
 $ docker network disconnect
 ```
 
-# IMAGE TAGGING & PUSHING TO DOCKERHUB
+# Image tagging & pushing to dockerhub
 
 # tags are labels that point ot an image ID
 
@@ -375,7 +369,7 @@ $ docker login
 $ docker image tag bradtraversy/nginx bradtraversy/nginx:testing
 ```
 
-### DOCKERFILE PARTS
+### Dockerfile parts
 
 - FROM - The os used. Common is alpine, debian, ubuntu
 - ENV - Environment variables
@@ -393,13 +387,13 @@ $ docker image tag bradtraversy/nginx bradtraversy/nginx:testing
 $ docker image build -t [REPONAME] .
 ```
 
-#### TIP: CACHE & ORDER
+#### tip: cache & order
 
 - If you re-run the build, it will be quick because everythging is cached.
 - If you change one line and re-run, that line and everything after will not be cached
 - Keep things that change the most toward the bottom of the Dockerfile
 
-# EXTENDING DOCKERFILE
+# Extending dockerfile
 
 ### Custom Dockerfile for html paqge with nginx
 
@@ -431,7 +425,7 @@ $ docker image tag nginx-website:latest btraversy/nginx-website:latest
 $ docker image push bradtraversy/nginx-website
 ```
 
-# VOLUMES
+# Volumes
 
 ### Volume - Makes special location outside of container UFS. Used for databases
 
@@ -473,7 +467,7 @@ $ docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
 $ docker container inspect mysql
 ```
 
-#### TIP: Mounts
+#### tip: mounts
 
 - You will also see the volume under mounts
 - Container gets its own uniqe location on the host to store that data
@@ -499,7 +493,7 @@ $ docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mys
 docker volume inspect mysql-db
 ```
 
-# BIND MOUNTS
+# Bind mounts
 
 - Can not use in Dockerfile, specified at run time (uses -v as well)
 - ... run -v /Users/brad/stuff:/path/container (mac/linux)
@@ -527,7 +521,7 @@ $ ls -al
 $ touch test.txt
 ```
 
-# DOCKER COMPOSE
+# Docker compose
 
 - Configure relationships between containers
 - Save our docker container run settings in easy to read file
