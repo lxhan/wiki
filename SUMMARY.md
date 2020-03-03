@@ -4,7 +4,6 @@
 
 ## Unix
 
-* [SSH key](unix/ssh_key.md)
 * [Keboard layout](unix/keyboard_layout.md)
 * [Terminal tips & tricks](unix/terminal_tips_tricks.md)
 * [URxvt](unix/urxvt.md)
@@ -17,6 +16,7 @@
 
 ## Backend
 
+* [SSH](ssh.md)
 * [Python](backend/python.md)
 * [Go](backend/go.md)
 * [Postgres](backend/postgres.md)
