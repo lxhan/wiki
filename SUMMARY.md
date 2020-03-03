@@ -16,11 +16,11 @@
 
 ## Backend
 
-* [SSH](ssh.md)
+* [SSH](backend/ssh.md)
 * [Python](backend/python.md)
 * [Go](backend/go.md)
 * [Postgres](backend/postgres.md)
-* [MySQL](mysql.md)
+* [MySQL](backend/mysql.md)
 * [Docker](backend/docker.md)
 
 ## Mobile
