@@ -1,4 +1,4 @@
-### Basic commands to run a new container 
+# Basic commands to run a new container 
 - Pull postgres image
 ```sh
 docker pull postgres:alpine
