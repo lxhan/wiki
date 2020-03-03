@@ -20,6 +20,7 @@
 * [Python](backend/python.md)
 * [Go](backend/go.md)
 * [Postgres](backend/postgres.md)
+* [MySQL](mysql.md)
 * [Docker](backend/docker.md)
 
 ## Mobile
