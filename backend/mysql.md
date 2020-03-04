@@ -115,7 +115,7 @@ SHOW TABLES;
 ## Insert Row / Record
 
 ```sql
-INSERT INTO users (first_name, last_name, email, password, location, dept, is_admin, register_date) values ('Brad', 'Traversy', 'brad@gmail.com', '123456','Massachusetts', 'development', 1, now());
+INSERT INTO users (first_name, last_name, email, password, location, dept, is_admin, register_date) values ('Alex', 'H', 'alex@gmail.com', '123456', 'Seoul', 'development', 1, now());
 ```
 
 ## Insert Multiple Rows
@@ -296,8 +296,8 @@ posts.title,
 users.first_name,
 users.last_name
 FROM comments
-INNER JOIN posts on posts.id = comments.post_id
-INNER JOIN users on users.id = comments.user_id
+INNER JOIN posts ON posts.id = comments.post_id
+INNER JOIN users ON users.id = comments.user_id
 ORDER BY posts.title;
 
 ```
