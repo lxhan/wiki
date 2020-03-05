@@ -20,6 +20,8 @@
 
 ```$ sudo apt-get install apache2```
 
+### Login to remote mysql server via ssh tunnel
+```$ ssh -R 3307:server-ip:3307 -i ~/path/to/key user@server-ip```
 
 ### Generate Keys (Local Machine)
 ```$ ssh-keygen```

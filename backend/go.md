@@ -113,7 +113,7 @@ nameSlice := []string{"Alex", "Lena", "etc"}
 if x < y {
   fmt.Println("x is less than y")
 } else if x > y {
-  fmt.Println("x is greater than y")  
+  fmt.Println("x is greater than y")
 } else {
   //    
 }

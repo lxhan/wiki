@@ -103,3 +103,7 @@ ctrl + w
 ctrl + y
 ```
 
+## Watch logs
+```bash
+tail -f /var/log/httpd/access_log.2020-03-0*
+```

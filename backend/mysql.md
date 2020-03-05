@@ -14,6 +14,7 @@ echo 'export PATH="/usr/local/mysql/bin:$PATH"' >> ~/.bash_profile
 
 ```bash
 mysql -u root -p
+mysql -u root -h localhost -P 3307 -p
 ```
 
 ## Show Users
@@ -21,6 +22,12 @@ mysql -u root -p
 ```sql
 SELECT User, Host FROM mysql.user;
 ```
+
+## Show users row by row
+```sql
+select * from users limit 3\G
+```
+
 
 ## Create User
 
@@ -110,6 +117,16 @@ DROP TABLE tablename;
 
 ```sql
 SHOW TABLES;
+```
+
+## Show table structure
+```sql
+describe [table];
+```
+
+## Show all indexes 
+```sql
+show index from [table];
 ```
 
 ## Insert Row / Record
