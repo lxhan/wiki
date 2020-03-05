@@ -28,6 +28,11 @@ SELECT User, Host FROM mysql.user;
 select * from users limit 3\G
 ```
 
+## Set pager
+```sql
+pager less -SFX;
+nopager;
+```
 
 ## Create User
 
