@@ -22,6 +22,7 @@
 * [Postgres](backend/postgres.md)
 * [MySQL](backend/mysql.md)
 * [Docker](backend/docker.md)
+* [AWS](AWS.md)
 
 ## Mobile
 [Swift](swift)
