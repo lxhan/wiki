@@ -8,6 +8,7 @@
 * [Terminal tips & tricks](unix/terminal_tips_tricks.md)
 * [URxvt](unix/urxvt.md)
 * [Void](unix/void.md)
+* [Linux](linux.md)
 
 ## Frontend
 
