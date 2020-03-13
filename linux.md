@@ -71,6 +71,8 @@ cat files_to_delete.txt | xargs rm
 | /var      | Variable data _ex. logs_                                                  |
 | /etc      | Administrative config files                                               |
 
+### Creating folders with brace expansion
+`mkdir {jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec}_{2020, 2021}`
 
 ## Wildcards
 
