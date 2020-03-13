@@ -71,3 +71,15 @@ cat files_to_delete.txt | xargs rm
 | /var      | Variable data _ex. logs_                                                  |
 | /etc      | Administrative config files                                               |
 
+
+## Wildcards
+
+- `*` matches anything
+- `?` matches anything but just for one place
+- `[]` matches just one place but allow to specify regular expression
+
+```sh
+ls file*.txt
+ls file?.txt
+ls file[0-9].txt
+```
