@@ -52,7 +52,7 @@ cat files_to_delete.txt | xargs rm
 ## File system
 
 | Directory | Purpose                                                                   |
-| ___       | ___                                                                       |
+| ---       | ---                                                                       |
 | /         | Root                                                                      |
 | /bin      | Common user command binaries _ex. date, cat, cal_                         |
 | /boot     | Bootable linux kernel and bootloader config files                         |
