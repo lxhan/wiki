@@ -107,3 +107,8 @@ ctrl + y
 ```bash
 tail -f /var/log/httpd/access_log.2020-03-0*
 ```
+
+## List all local users
+```bash
+cut -d: -f1 /etc/passwd
+```
