@@ -6,7 +6,7 @@ I tried to make it minimal yet available to use all the tools I need and without
 
 First thing after installation we need internet connection. If you have wired connection it is a little easier but setting up wireless is not hard at all:
 
-```shell
+```sh
 # show network interfaces
 ip link show
 # copy wpa conf 
@@ -60,11 +60,11 @@ xbps-install -Su
 # Packages
 
 - Clone this repo if you haven't already:
- 
 ```sh
 git clone https://github.com/lxhan/void.git
 cd void
 ```
+
 - If `git` is not installed:
 ```sh
 sudo xbps-install -S git
