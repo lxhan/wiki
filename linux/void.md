@@ -71,12 +71,14 @@ sudo xbps-install -S git
 ```
 
 - Inspect pkg.sh and then run it:
-
 ```sh
 chmod +x pkg.sh
 ./pkg.sh
 ```
+
+{% hint style="danger" %}
 **Attention!** `pkg.sh` contains only 2 commands: `xbps-install -Syu` and `xbps-install -Sy ...packages`. You can remove packages you don't need or add more. Script is only a shortcut so you don't have to type package names.
+{% endhint %}
 
 # Fonts
 
