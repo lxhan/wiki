@@ -7,7 +7,6 @@
   - [Terminal](linux/terminal_tips_tricks.md)
   - [Linux](linux/linux.md)
 
-
 - [Programming](programming)
   - [Backend](backend)
     - [SSH](programming/backend/ssh.md)
