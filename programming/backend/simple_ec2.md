@@ -45,6 +45,21 @@ DocumentRoot "/home/loveto/cms"
 </IfModule>
 ```
 
+### Restart apache
+```sh
+service httpd restart
+```
+
+### phpMyAdmin
+```sh
+sudo yum install php73-mbstring.x86_64 -y
+cd /home/user/html
+wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.tar.gz
+mkdir phpMyAdmin && tar -xvzf phpMyAdmin-latest-all-languages.tar.gz -C phpMyAdmin --strip-components 1
+rm phpMyAdmin-latest-all-languages.tar.gz
+sudo service mysqld start
+```
+
 ## Git
 
 `yum install git`
