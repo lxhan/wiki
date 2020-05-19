@@ -110,6 +110,17 @@ id INT AUTO_INCREMENT,
    register_date DATETIME,
    PRIMARY KEY(id)
 );
+
+CREATE TABLE member_profile_image(
+	seq INT AUTO_INCREMENT, 
+	user_seq INT NOT NULL,
+	image_order TINYINT NOT NULL, # (0, 1, 2, 3)
+	image_src VARCHAR(150) NOT NULL, 
+	image_type TINYINT NOT NULL, # (0=tiny, 1=small, 2=normal, 3=original) 
+	image_status TINYINT NOT NULL DEFAULT 0, # (0=checking, 1=accepted, 2=rejected)
+	image_upload_date DATETIME,
+	PRIMARY KEY(seq)
+);
 ```
 
 ## Delete / Drop Table
