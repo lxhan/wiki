@@ -1,5 +1,8 @@
 # Summary
 
+- [Algorithms](algorithms)
+  - [Big O](algorithms/big_o.md)
+
 - [Linux](linux)
   - [Basics](linux/basics.md)
   - [Keyboard layout](linux/keyboard_layout.md)
@@ -21,7 +24,4 @@
     - [CSS](programming/frontend/css.md)
     - [JavaScript](programming/frontend/javascript.md)
   - [Regular expressions](programming/regular_expressions.md)
-
-- [Algorithms](algorithms)
-  - [Big O](algorithms/big_o.md)
 
