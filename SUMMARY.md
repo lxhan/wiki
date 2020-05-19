@@ -1,6 +1,6 @@
 # Summary
 
-- [Linux](linux)
+- [Linux]()
   - [Keyboard layout](linux/keyboard_layout.md)
   - [URxvt](linux/urxvt.md)
   - [Void](linux/void.md)
