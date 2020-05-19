@@ -1,11 +1,11 @@
 # Summary
 
-- [Linux]()
+- [Linux](linux)
+  - [Basics](linux/basics.md)
   - [Keyboard layout](linux/keyboard_layout.md)
   - [URxvt](linux/urxvt.md)
   - [Void](linux/void.md)
   - [Terminal](linux/terminal_tips_tricks.md)
-  - [Linux](linux/linux.md)
 
 - [Programming](programming)
   - [Backend](backend)
