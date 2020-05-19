@@ -1,5 +1,7 @@
 # Linux
 
+[Linux Productivity Tools](https://www.usenix.org/sites/default/files/conference/protected-files/lisa19_maheshwari.pdf)
+
 ## Input / output
 `0 = STDIN`
 `1 = STDOUT`
