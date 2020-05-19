@@ -20,6 +20,7 @@
     - [Docker](programming/backend/docker.md)
     - [AWS](programming/backend/AWS.md)
     - [Apache](programming/backend/apache.md)
+    - [Simple EC2 setting](programming/backend/simple_ec2.md)
   - [Frontend](frontend)
     - [CSS](programming/frontend/css.md)
     - [JavaScript](programming/frontend/javascript.md)
