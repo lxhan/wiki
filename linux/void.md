@@ -59,18 +59,18 @@ xbps-install -Su
 
 # Packages
 
-1. Clone this repo if you haven't already:
+- Clone this repo if you haven't already:
  
 ```sh
 git clone https://github.com/lxhan/void.git
 cd void
 ```
-2. If `git` is not installed:
+- If `git` is not installed:
 ```sh
 sudo xbps-install -S git
 ```
 
-3. Inspect pkg.sh and then run it:
+- Inspect pkg.sh and then run it:
 
 ```sh
 chmod +x pkg.sh
