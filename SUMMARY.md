@@ -2,39 +2,30 @@
 
 * [Introduction](README.md)
 
-## Unix
+## Linux 
 
-* [Keboard layout](unix/keyboard_layout.md)
-* [Terminal tips & tricks](unix/terminal_tips_tricks.md)
-* [URxvt](unix/urxvt.md)
-* [Void](unix/void.md)
-* [Linux](linux.md)
+* [Keboard layout](linux/keyboard_layout.md)
+* [Terminal tips & tricks](linux/terminal_tips_tricks.md)
+* [URxvt](linux/urxvt.md)
+* [Void](linux/void.md)
+* [Linux](linux/linux.md)
 
-## Frontend
-
-* [CSS](frontend/css.md)
-* [JavaScript](frontend/javascript.md)
-
-## Backend
-
-* [SSH](backend/ssh.md)
-* [Python](backend/python.md)
-* [Go](backend/go.md)
-* [Postgres](backend/postgres.md)
-* [MySQL](backend/mysql.md)
-* [Docker](backend/docker.md)
-* [AWS](AWS.md)
-* [Apache](apache.md)
-
-## Mobile
-[Swift](swift)
 
 ## Programming
 
 * [Regular expressions](programming/regular_expressions.md)
-
+* [SSH](programming/backend/ssh.md)
+* [Python](programming/backend/python.md)
+* [Go](programming/backend/go.md)
+* [Postgres](programming/backend/postgres.md)
+* [MySQL](programming/backend/mysql.md)
+* [Docker](programming/backend/docker.md)
+* [AWS](programming/backend/AWS.md)
+* [Apache](programming/backend/apache.md)
+* [CSS](programming/frontend/css.md)
+* [JavaScript](programming/frontend/javascript.md)
 
 ## Algorithms
 
-* [Big O](big_o.md)
+* [Big O](algorithms/big_o.md)
 
