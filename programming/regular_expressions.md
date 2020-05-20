@@ -9,7 +9,7 @@
 | \[a-z\]  | Matches any characters within specific range              | **\[1-3a-c\]** matches: 76`a321bca`9z                     |
 | .        | Matches any character except linebreaks                   | **.**  matches: `hello world 3342`                        |
 | \w       | Matches any word character, equivalent to \[A-Za-z0-9\_\] | **\w** matches: `Regexps are amazing`!!!                  |
-| \d       | Matches numeric digits                                    | **\d** matches: My number is +\(`82`\)-`10`-`8238`-`0032` |
+| \d       | Matches numeric digits                                    | **\d** matches: My number is +\(`82`\)-`10`-`1111`-`0000` |
 | \s       | Matches any whitespace \(spaces, tabs,linebreaks\)        | **\s** matches: I```love`` `apple` \`pie                  |
 
 ## Quantifiers & More
@@ -26,8 +26,8 @@
 
 ## Anchors
 
-| Regex | Explanation | Example |
-| :--- | :--- | :--- |
-| ^ | Matches the beginning of a string | **\^\[Pp\]** matches: `P`ickle people |
-| $ | Matches the end of a string | **ah$** matches: hahahah`ah` |
+| Regex | Explanation                       | Example                               |
+| ---   | ---                               | ---                                   |
+| ^     | Matches the beginning of a string | **\^\[Pp\]** matches: `P`ickle people |
+| $     | Matches the end of a string       | **ah$** matches: hahahah`ah`          |
 
