@@ -53,25 +53,25 @@ cat files_to_delete.txt | xargs rm
 
 ## File system
 
-| Directory  | Purpose                                                                   |
-| ---        | ---                                                                       |
-| **/     ** | Root                                                                      |
-| **/bin  ** | Common user command binaries _ex. date, cat, cal_                         |
-| **/boot ** | Bootable linux kernel and bootloader config files                         |
-| **/dev  ** | Devices _ex. tty=terminal, sd or hd = hard disks, ram etc._               |
-| **/home ** | Home directories for regular users                                        |
-| **/media** | Removable media mounting directory _ex. usb_                              |
-| **/lib  ** | Libraries needed by applications in `/bin` and `/sbin` to boot the system |
-| **/mnt  ** | External devices mounting directory (supressed by `/media`)               |
-| **/misc ** | Used to sometimes automout filesystems on request                         |
-| **/opt  ** | Directory structure used to store additional software                     |
-| **/proc ** | Information about system resources                                        |
-| **/root ** | Home folder for the root user                                             |
-| **/sbin ** | Administrative command binaries for super user                            |
-| **/tmp  ** | Temporary files used by running apps                                      |
-| **/usr  ** | Users files that don't change after installation                          |
-| **/var  ** | Variable data _ex. logs_                                                  |
-| **/etc  ** | Administrative config files                                               |
+| Directory   | Purpose                                                                   |
+| ---         | ---                                                                       |
+| **/     **  | Root                                                                      |
+| **/bin  **  | Common user command binaries _ex. date, cat, cal_                         |
+| **/boot **  | Bootable linux kernel and bootloader config files                         |
+| **/dev  **  | Devices _ex. tty=terminal, sd or hd = hard disks, ram etc._               |
+| **/home **  | Home directories for regular users                                        |
+| **/media ** | Removable media mounting directory _ex. usb_                              |
+| **/lib  **  | Libraries needed by applications in `/bin` and `/sbin` to boot the system |
+| **/mnt  **  | External devices mounting directory (supressed by `/media`)               |
+| **/misc **  | Used to sometimes automout filesystems on request                         |
+| **/opt  **  | Directory structure used to store additional software                     |
+| **/proc **  | Information about system resources                                        |
+| **/root **  | Home folder for the root user                                             |
+| **/sbin **  | Administrative command binaries for super user                            |
+| **/tmp  **  | Temporary files used by running apps                                      |
+| **/usr  **  | Users files that don't change after installation                          |
+| **/var  **  | Variable data _ex. logs_                                                  |
+| **/etc  **  | Administrative config files                                               |
 
 ### Creating files with brace expansion
 ```sh
