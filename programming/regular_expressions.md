@@ -14,15 +14,15 @@
 
 ## Quantifiers & More
 
-| Regex | Explanation | Example |
-| --- | --- | --- |
-| + | Matches 1 or more of preceding token | **A+** matches: H`A` H`A` H`AAA` |
-| \* | Matches zero or more of the previous token | **colou\*r** matches: is it `color` or `colour` or `colouuuur` |
-| {3} | Matches specific quantity of previous token | **\[a-z\]{3}** matches: `she` is a `cat` `not` a `dog` |
-| {1,3} | Matches quantity within specified range | **\d{3,4}** matches: `010`-`8238`-`0032` |
-| {4,} | Matches the specified quantity or greater | **!{3,}** matches: hi! this is great`!!!`lol`!!!!!` |
-| ? | Matches 0 or 1 of previous token. Basically it makes something optional | **colou?r** matches: is it `color` or `colour` or colouuuur? |
-| \| | Matches whatever is to the left or right of the **\|** character. Similar to boolean OR. | \*\*\w+pp\(y\|ies\) matches: `puppy` `puppies` `poppy` `poppies` `yuppy` `yuppies` |
+| Regex | Explanation                                                                             | Example                                                                       |
+| ---   | ---                                                                                     | ---                                                                           |
+| +     | Matches 1 or more of preceding token                                                    | **A+** matches: H`A` H`A` H`AAA`                                              |
+| \*    | Matches zero or more of the previous token                                              | **colou\*r** matches: is it `color` or `colour` or `colouuuur`                |
+| {3}   | Matches specific quantity of previous token                                             | **\[a-z\]{3}** matches: `she` is a `cat` `not` a `dog`                        |
+| {1,3} | Matches quantity within specified range                                                 | **\d{3,4}** matches: `010`-`8238`-`0032`                                      |
+| {4,}  | Matches the specified quantity or greater                                               | **!{3,}** matches: hi! this is great`!!!`lol`!!!!!`                           |
+| ?     | Matches 0 or 1 of previous token. Basically it makes something optional                 | **colou?r** matches: is it `color` or `colour` or colouuuur?                  |
+| \     | Matches whatever is to the left or right of the **\** character. Similar to boolean OR. | **\w+pp(y\ies) matches: `puppy` `puppies` `poppy` `poppies` `yuppy` `yuppies` |
 
 ## Anchors
 
