@@ -1,6 +1,5 @@
 # Go
 
-[Go crash course](https://www.youtube.com/watch?v=SqrbIlUwR0U&t=3193s) [Go full course](https://www.youtube.com/watch?v=YS4e4q9oBaU)
 
 ### Project structure
 
@@ -368,3 +367,7 @@ func main() {
 }
 ```
 
+
+## Links
+- [Go crash course](https://www.youtube.com/watch?v=SqrbIlUwR0U&t=3193s) 
+- [Go full course](https://www.youtube.com/watch?v=YS4e4q9oBaU)
