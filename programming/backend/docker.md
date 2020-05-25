@@ -420,7 +420,7 @@ docker image push use/nginx-website
 
 # Volumes
 
-{% hint style=warning}
+{% hint style=warning %}
 - Volume - Makes special location outside of container UFS. Used for databases
 
 - Bind Mount -Link container path to host path
