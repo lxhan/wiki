@@ -37,19 +37,19 @@ docker cp ./localfile.sql containername:/container/path/file.sql
 ### Show commands & management commands
 
 ```
-$ docker
+docker
 ```
 
 ### Docker version info
 
 ```
-$ docker version
+docker version
 ```
 
 ### Show info like number of containers, etc
 
 ```
-$ docker info
+docker info
 ```
 
 # Working with containers
@@ -57,19 +57,19 @@ $ docker info
 ### Create an run a container in foreground
 
 ```
-$ docker container run -it -p 80:80 nginx
+docker container run -it -p 80:80 nginx
 ```
 
 ### Create an run a container in background
 
 ```
-$ docker container run -d -p 80:80 nginx
+docker container run -d -p 80:80 nginx
 ```
 
 ### Naming Containers
 
 ```
-$ docker container run -d -p 80:80 --name nginx-server nginx
+docker container run -d -p 80:80 --name nginx-server nginx
 ```
 
 ### tip: what run did
@@ -85,67 +85,67 @@ $ docker container run -d -p 80:80 --name nginx-server nginx
 ### List running containers
 
 ```
-$ docker container ls
+docker container ls
 ```
 
 or
 
 ```
-$ docker ps
+docker ps
 ```
 
 ### List all containers (Even if not running)
 
 ```
-$ docker container ls -a
+docker container ls -a
 ```
 
 ### Stop container
 
 ```
-$ docker container stop [ID]
+docker container stop [ID]
 ```
 
 ### Stop all running containers
 
 ```
-$ docker stop $(docker ps -aq)
+docker stop $(docker ps -aq)
 ```
 
 ### Remove container (Can not remove running containers, must stop first)
 
 ```
-$ docker container rm [ID]
+docker container rm [ID]
 ```
 
 ### To remove a running container use force(-f)
 
 ```
-$ docker container rm -f [ID]
+docker container rm -f [ID]
 ```
 
 ### Remove multiple containers
 
 ```
-$ docker container rm [ID] [ID] [ID]
+docker container rm [ID] [ID] [ID]
 ```
 
 ### Remove all containers
 
 ```
-$ docker rm $(docker ps -aq)
+docker rm $(docker ps -aq)
 ```
 
 ### Get logs (Use name or ID)
 
 ```
-$ docker container logs [NAME]
+docker container logs [NAME]
 ```
 
 ### List processes running in container
 
 ```
-$ docker container top [NAME]
+docker container top [NAME]
 ```
 
 #### tip: about containers
@@ -157,25 +157,25 @@ Docker containers are often compared to virtual machines but they are actually j
 ### List the images we have pulled
 
 ```
-$ docker image ls
+docker image ls
 ```
 
 ### We can also just pull down images
 
 ```
-$ docker pull [IMAGE]
+docker pull [IMAGE]
 ```
 
 ### Remove image
 
 ```
-$ docker image rm [IMAGE]
+docker image rm [IMAGE]
 ```
 
 ### Remove all images
 
 ```
-$ docker rmi $(docker images -a -q)
+docker rmi $(docker images -a -q)
 ```
 
 #### tip: about images
@@ -189,25 +189,25 @@ $ docker rmi $(docker images -a -q)
 NGINX:
 
 ```
-$ docker container run -d -p 80:80 --name nginx nginx (-p 80:80 is optional as it runs on 80 by default)
+docker container run -d -p 80:80 --name nginx nginx (-p 80:80 is optional as it runs on 80 by default)
 ```
 
 APACHE:
 
 ```
-$ docker container run -d -p 8080:80 --name apache httpd
+docker container run -d -p 8080:80 --name apache httpd
 ```
 
 MONGODB:
 
 ```
-$ docker container run -d -p 27017:27017 --name mongo mongo
+docker container run -d -p 27017:27017 --name mongo mongo
 ```
 
 MYSQL:
 
 ```
-$ docker container run -d -p 3306:3306 --name mysql --env MYSQL_ROOT_PASSWORD=123456 mysql
+docker container run -d -p 3306:3306 --name mysql --env MYSQL_ROOT_PASSWORD=123456 mysql
 ```
 
 ## Container info
@@ -215,19 +215,19 @@ $ docker container run -d -p 3306:3306 --name mysql --env MYSQL_ROOT_PASSWORD=12
 ### View info on container
 
 ```
-$ docker container inspect [NAME]
+docker container inspect [NAME]
 ```
 
 ### Specific property (--format)
 
 ```
-$ docker container inspect --format '{{ .NetworkSettings.IPAddress }}' [NAME]
+docker container inspect --format '{{ .NetworkSettings.IPAddress }}' [NAME]
 ```
 
 ### Performance stats (cpu, mem, network, disk, etc)
 
 ```
-$ docker container stats [NAME]
+docker container stats [NAME]
 ```
 
 ## Accessing containers
@@ -235,7 +235,7 @@ $ docker container stats [NAME]
 ### Create new nginx container and bash into
 
 ```
-$ docker container run -it --name [NAME] nginx bash
+docker container run -it --name [NAME] nginx bash
 ```
 
 - i = interactive Keep STDIN open if not attached
@@ -244,13 +244,13 @@ $ docker container run -it --name [NAME] nginx bash
 **For Git Bash, use "winpty"**
 
 ```
-$ winpty docker container run -it --name [NAME] nginx bash
+winpty docker container run -it --name [NAME] nginx bash
 ```
 
 ### Run/Create Ubuntu container
 
 ```
-$ docker container run -it --name ubuntu ubuntu
+docker container run -it --name ubuntu ubuntu
 ```
 
 **(no bash because ubuntu uses bash by default)**
@@ -258,25 +258,25 @@ $ docker container run -it --name ubuntu ubuntu
 ### You can also make it so when you exit the container does not stay by using the -rm flag
 
 ```
-$ docker container run --rm -it --name [NAME] ubuntu
+docker container run --rm -it --name [NAME] ubuntu
 ```
 
 ### Access an already created container, start with -ai
 
 ```
-$ docker container start -ai ubuntu
+docker container start -ai ubuntu
 ```
 
 ### Use exec to edit config, etc
 
 ```
-$ docker container exec -it mysql bash
+docker container exec -it mysql bash
 ```
 
 ### Alpine is a very small Linux distro good for docker
 
 ```
-$ docker container run -it alpine sh
+docker container run -it alpine sh
 ```
 
 (use sh because it does not include bash)
@@ -289,50 +289,50 @@ $ docker container run -it alpine sh
 ### Get port
 
 ```
-$ docker container port [NAME]
+docker container port [NAME]
 ```
 
 ### List networks
 
 ```
-$ docker network ls
+docker network ls
 ```
 
 ### Inspect network
 
 ```
-$ docker network inspect [NETWORK_NAME]
-("bridge" is default)
+docker network inspect [NETWORK_NAME]
+# ("bridge" is default)
 ```
 
 ### Create network
 
 ```
-$ docker network create [NETWORK_NAME]
+docker network create [NETWORK_NAME]
 ```
 
 ### Create container on network
 
 ```
-$ docker container run -d --name [NAME] --network [NETWORK_NAME] nginx
+docker container run -d --name [NAME] --network [NETWORK_NAME] nginx
 ```
 
 ### Connect existing container to network
 
 ```
-$ docker network connect [NETWORK_NAME] [CONTAINER_NAME]
+docker network connect [NETWORK_NAME] [CONTAINER_NAME]
 ```
 
 ### Disconnect container from network
 
 ```
-$ docker network disconnect [NETWORK_NAME] [CONTAINER_NAME]
+docker network disconnect [NETWORK_NAME] [CONTAINER_NAME]
 ```
 
 ### Detach network from container
 
 ```
-$ docker network disconnect
+docker network disconnect
 ```
 
 # Image tagging & pushing to dockerhub
@@ -340,7 +340,7 @@ $ docker network disconnect
 # tags are labels that point ot an image ID
 
 ```
-$ docker image ls
+docker image ls
 ```
 
 Youll see that each image has a tag
@@ -348,25 +348,25 @@ Youll see that each image has a tag
 ### Retag existing image
 
 ```
-$ docker image tag nginx btraversy/nginx
+docker image tag nginx user/nginx
 ```
 
 ### Upload to dockerhub
 
 ```
-$ docker image push bradtraversy/nginx
+docker image push user/nginx
 ```
 
 ### If denied, do
 
 ```
-$ docker login
+docker login
 ```
 
 ### Add tag to new image
 
 ```
-$ docker image tag bradtraversy/nginx bradtraversy/nginx:testing
+docker image tag user/nginx user/nginx:testing
 ```
 
 ### Dockerfile parts
@@ -384,7 +384,7 @@ $ docker image tag bradtraversy/nginx bradtraversy/nginx:testing
 ### From the same directory as Dockerfile
 
 ```
-$ docker image build -t [REPONAME] .
+docker image build -t [REPONAME] .
 ```
 
 #### tip: cache & order
@@ -406,26 +406,26 @@ COPY index.html index.html
 ### Build image from Dockerfile
 
 ```
-$ docker image build -t nginx-website
+docker image build -t nginx-website
 ```
 
 ### Running it
 
 ```
-$ docker container run -p 80:80 --rm nginx-website
+docker container run -p 80:80 --rm nginx-website
 ```
 
 ### Tag and push to Dockerhub
 
 ```
-$ docker image tag nginx-website:latest btraversy/nginx-website:latest
+docker image tag nginx-website:latest user/nginx-website:latest
 ```
 
 ```
-$ docker image push bradtraversy/nginx-website
+docker image push use/nginx-website
 ```
 
-# Volumes
+## Volumes
 
 ### Volume - Makes special location outside of container UFS. Used for databases
 
@@ -434,37 +434,37 @@ $ docker image push bradtraversy/nginx-website
 ### Check volumes
 
 ```
-$ docker volume ls
+docker volume ls
 ```
 
 ### Cleanup unused volumes
 
 ```
-$ docker volume prune
+docker volume prune
 ```
 
 ### Pull down mysql image to test
 
 ```
-$ docker pull mysql
+docker pull mysql
 ```
 
 ### Inspect and see volume
 
 ```
-$ docker image inspect mysql
+docker image inspect mysql
 ```
 
 ### Run container
 
 ```
-$ docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
+docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
 ```
 
 ### Inspect and see volume in container
 
 ```
-$ docker container inspect mysql
+docker container inspect mysql
 ```
 
 #### tip: mounts
@@ -476,7 +476,7 @@ $ docker container inspect mysql
 ### Check volumes
 
 ```
-$ docker volume ls
+docker volume ls
 ```
 
 **There is no way to tell volumes apart for instance with 2 mysql containers, so we used named volumes**
@@ -484,7 +484,7 @@ $ docker volume ls
 ### Named volumes (Add -v command)(the name here is mysql-db which could be anything)
 
 ```
-$ docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v mysql-db:/var/lib/mysql mysql
+docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=TRUE -v mysql-db:/var/lib/mysql mysql
 ```
 
 ### Inspect new named volume
@@ -496,29 +496,29 @@ docker volume inspect mysql-db
 # Bind mounts
 
 - Can not use in Dockerfile, specified at run time (uses -v as well)
-- ... run -v /Users/brad/stuff:/path/container (mac/linux)
-- ... run -v //c/Users/brad/stuff:/path/container (windows)
+- ... run -v /Users/user/stuff:/path/container (mac/linux)
+- ... run -v //c/Users/user/stuff:/path/container (windows)
 
 **TIP: Instead of typing out local path, for working directory use $(pwd):/path/container - On windows may not work unless you are in your users folder**
 
 ### Run and be able to edit index.html file (local dir should have the Dockerfile and the index.html)
 
 ```
-$ docker container run  -p 80:80 -v $(pwd):/usr/share/nginx/html nginx
+docker container run  -p 80:80 -v $(pwd):/usr/share/nginx/html nginx
 ```
 
 ### Go into the container and check
 
 ```
-$ docker container exec -it nginx bash
-$ cd /usr/share/nginx/html
-$ ls -al
+docker container exec -it nginx bash
+cd /usr/share/nginx/html
+ls -al
 ```
 
 ### You could create a file in the container and it will exiost on the host as well
 
 ```
-$ touch test.txt
+touch test.txt
 ```
 
 # Docker compose
