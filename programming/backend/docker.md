@@ -456,7 +456,7 @@ docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
 docker container inspect mysql
 ```
 
-{% hint style=warning}
+{% hint style=warning %}
 Mounts
 
 - You will also see the volume under mounts
@@ -488,7 +488,7 @@ docker volume inspect mysql-db
 - ... run -v /Users/user/stuff:/path/container (mac/linux)
 - ... run -v //c/Users/user/stuff:/path/container (windows)
 
-{% hint style=warning}
+{% hint style=warning %}
 **Instead of typing out local path, for working directory use $(pwd):/path/container - On windows may not work unless you are in your users folder**
 {% endhint %}
 
