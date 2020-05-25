@@ -70,7 +70,7 @@ docker container run -d -p 80:80 --name nginx-server nginx
 ```
 
 {% hint style=warning %}
-tip: what run did
+What run did
 
 - Looked for image called nginx in image cache
 - If not found in cache, it looks to the default image repo on Dockerhub
@@ -79,18 +79,13 @@ tip: what run did
 - We specified to take port 80- on the host and forward to port 80 on the container
 - We could do "$ docker container run --publish 8000:80 --detach nginx" to use port 8000
 - We can specify versions like "nginx:1.09"
-- 
 {% endhint %}
 
 ### List running containers
 
 ```
 docker container ls
-```
 
-or
-
-```
 docker ps
 ```
 
@@ -148,9 +143,11 @@ docker container logs [NAME]
 docker container top [NAME]
 ```
 
-#### tip: about containers
+{% hint style=warning %}
+About containers
 
 Docker containers are often compared to virtual machines but they are actually just processes running on your host os. In Windows/Mac, Docker runs in a mini-VM so to see the processes youll need to connect directly to that. On Linux however you can run "ps aux" and see the processes directly
+{% endhint %}
 
 # Image commands
 
@@ -178,39 +175,40 @@ docker image rm [IMAGE]
 docker rmi $(docker images -a -q)
 ```
 
-#### tip: about images
+{% hint style=warning %}
+About images
 
 - Images are app bianaries and dependencies with meta data about the image data and how to run the image
 - Images are no a complete OS. No kernel, kernel modules (drivers)
 - Host provides the kernel, big difference between VM
+{% endhint %}
 
 ### Some sample container creation
-
-NGINX:
+nginx:
 
 ```
 docker container run -d -p 80:80 --name nginx nginx (-p 80:80 is optional as it runs on 80 by default)
 ```
 
-APACHE:
+apache:
 
 ```
 docker container run -d -p 8080:80 --name apache httpd
 ```
 
-MONGODB:
+mongo:
 
 ```
 docker container run -d -p 27017:27017 --name mongo mongo
 ```
 
-MYSQL:
+mysql:
 
 ```
 docker container run -d -p 3306:3306 --name mysql --env MYSQL_ROOT_PASSWORD=123456 mysql
 ```
 
-## Container info
+# Container info
 
 ### View info on container
 
@@ -230,7 +228,7 @@ docker container inspect --format '{{ .NetworkSettings.IPAddress }}' [NAME]
 docker container stats [NAME]
 ```
 
-## Accessing containers
+# Accessing containers
 
 ### Create new nginx container and bash into
 
@@ -336,35 +334,27 @@ docker network disconnect
 ```
 
 # Image tagging & pushing to dockerhub
-
-# tags are labels that point ot an image ID
-
+### Tags are labels that point ot an image ID
 ```
 docker image ls
 ```
 
-Youll see that each image has a tag
-
 ### Retag existing image
-
 ```
 docker image tag nginx user/nginx
 ```
 
 ### Upload to dockerhub
-
 ```
 docker image push user/nginx
 ```
 
 ### If denied, do
-
 ```
 docker login
 ```
 
 ### Add tag to new image
-
 ```
 docker image tag user/nginx user/nginx:testing
 ```
@@ -387,11 +377,14 @@ docker image tag user/nginx user/nginx:testing
 docker image build -t [REPONAME] .
 ```
 
-#### tip: cache & order
+{% hint style=warning %}
+Cache & order
 
 - If you re-run the build, it will be quick because everythging is cached.
 - If you change one line and re-run, that line and everything after will not be cached
 - Keep things that change the most toward the bottom of the Dockerfile
+
+{% endhint %}
 
 # Extending dockerfile
 
@@ -425,56 +418,55 @@ docker image tag nginx-website:latest user/nginx-website:latest
 docker image push use/nginx-website
 ```
 
-## Volumes
+# Volumes
 
-### Volume - Makes special location outside of container UFS. Used for databases
+{% hint style=warning}
+- Volume - Makes special location outside of container UFS. Used for databases
 
-### Bind Mount -Link container path to host path
+- Bind Mount -Link container path to host path
+{% endhint %}
 
 ### Check volumes
-
 ```
 docker volume ls
 ```
 
 ### Cleanup unused volumes
-
 ```
 docker volume prune
 ```
 
 ### Pull down mysql image to test
-
 ```
 docker pull mysql
 ```
 
 ### Inspect and see volume
-
 ```
 docker image inspect mysql
 ```
 
 ### Run container
-
 ```
 docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
 ```
 
 ### Inspect and see volume in container
-
 ```
 docker container inspect mysql
 ```
 
-#### tip: mounts
+{% hint style=warning}
+Mounts
 
 - You will also see the volume under mounts
 - Container gets its own uniqe location on the host to store that data
 - Source: xxx is where it lives on the host
 
-### Check volumes
+{% endhint %}
 
+
+### Check volumes
 ```
 docker volume ls
 ```
@@ -482,33 +474,30 @@ docker volume ls
 **There is no way to tell volumes apart for instance with 2 mysql containers, so we used named volumes**
 
 ### Named volumes (Add -v command)(the name here is mysql-db which could be anything)
-
 ```
 docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=TRUE -v mysql-db:/var/lib/mysql mysql
 ```
 
 ### Inspect new named volume
-
 ```
 docker volume inspect mysql-db
 ```
 
 # Bind mounts
-
 - Can not use in Dockerfile, specified at run time (uses -v as well)
 - ... run -v /Users/user/stuff:/path/container (mac/linux)
 - ... run -v //c/Users/user/stuff:/path/container (windows)
 
-**TIP: Instead of typing out local path, for working directory use $(pwd):/path/container - On windows may not work unless you are in your users folder**
+{% hint style=warning}
+**Instead of typing out local path, for working directory use $(pwd):/path/container - On windows may not work unless you are in your users folder**
+{% endhint %}
 
 ### Run and be able to edit index.html file (local dir should have the Dockerfile and the index.html)
-
 ```
 docker container run  -p 80:80 -v $(pwd):/usr/share/nginx/html nginx
 ```
 
 ### Go into the container and check
-
 ```
 docker container exec -it nginx bash
 cd /usr/share/nginx/html
@@ -516,27 +505,24 @@ ls -al
 ```
 
 ### You could create a file in the container and it will exiost on the host as well
-
 ```
 touch test.txt
 ```
 
 # Docker compose
-
 - Configure relationships between containers
 - Save our docker container run settings in easy to read file
 - 2 Parts: YAML File (docker.compose.yml) + CLI tool (docker-compose)
 
-### 1. docker.compose.yml - Describes solutions for
-
+### `docker.compose.yml` - Describes solutions for
 - containers
 - networks
 - volumes
 
-### 2. docker-compose CLI - used for local dev/test automation with YAML files
+###  docker-compose CLI
+Used for local dev/test automation with YAML files
 
 ### Sample compose file (From Bret Fishers course)
-
 ```
 version: '2'
 
@@ -553,19 +539,16 @@ services:
 ```
 
 ### To run
-
 ```
 docker-compose up
 ```
 
 ### You can run in background with
-
 ```
 docker-compose up -d
 ```
 
 ### To cleanup
-
 ```
 docker-compose down
 ```
