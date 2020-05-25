@@ -69,7 +69,8 @@ docker container run -d -p 80:80 nginx
 docker container run -d -p 80:80 --name nginx-server nginx
 ```
 
-### tip: what run did
+{% hint style=warning %}
+tip: what run did
 
 - Looked for image called nginx in image cache
 - If not found in cache, it looks to the default image repo on Dockerhub
@@ -78,6 +79,8 @@ docker container run -d -p 80:80 --name nginx-server nginx
 - We specified to take port 80- on the host and forward to port 80 on the container
 - We could do "$ docker container run --publish 8000:80 --detach nginx" to use port 8000
 - We can specify versions like "nginx:1.09"
+- 
+{% endhint %}
 
 ### List running containers
 
