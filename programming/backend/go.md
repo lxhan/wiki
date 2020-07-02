@@ -371,3 +371,7 @@ func main() {
 ## Links
 - [Go crash course](https://www.youtube.com/watch?v=SqrbIlUwR0U&t=3193s) 
 - [Go full course](https://www.youtube.com/watch?v=YS4e4q9oBaU)
+- [Data types](https://www.8host.com/blog/osnovnye-tipy-dannyx-v-go/)
+- [Data types cheat sheet](https://rtfm.co.ua/books-translations/go-s-nulya/go-chast-3-tipy-dannyx/)
+- [Another data type cheat sheet](https://metanit.com/go/tutorial/2.3.php)
+  
