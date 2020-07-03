@@ -87,6 +87,7 @@ var nameArr [2]string
 ```
 
 - Slices
+
 ```go
 nameSlice := []string{"Alex", "Lena", "etc"}
 ```
