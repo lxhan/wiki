@@ -212,6 +212,7 @@ for i, id := range ids {
 ```
 
 - Loop without index
+ 
 ```go
 ids := []int{3, 44, 6, 23, 1, 283}
 
@@ -234,6 +235,7 @@ ___
 ## Pointers
 
 - Declare pointer 
+
 ```go
 a := 5
 b := &a
