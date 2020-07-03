@@ -16,7 +16,7 @@ workspace
 
 ## Variables
 
-1. String
+- String
 
 ```go
 var name string = "Alex"
@@ -24,7 +24,7 @@ var name = "Alex"
 name := "Alex"
 ```
 
-2. Integer
+- Integer
 
 ```go
 var age int = 32
@@ -32,7 +32,7 @@ var age = 32
 age := 32
 ```
 
-3. Boolean
+- Boolean
 
 ```go
 var isMarried bool = true
@@ -41,7 +41,7 @@ const isMarried = true
 isMarried := true
 ```
 
-4. Float
+- Float
 
 ```go
 var size float32 = 1.3
@@ -49,20 +49,20 @@ var size = 1.3
 size := 1.3
 ```
 
-5. Shorthand for multiple vars assignment
+- Shorthand for multiple vars assignment
 
 ```go
 name, age := "Alex", 32
 ```
 
-6. Shorthand for var
+- Shorthand for var
 
 ```go
 name := "Alex"
 // Must be inside body
 ```
 
-7. Get type of variable
+- Get type of variable
 
 ```go
 fmt.Println("%T\n", name)
@@ -79,7 +79,7 @@ func greet(name string) string {
 
 ## Arrays & Slices
 
-1. Arrays
+- Arrays
 
 ```go
 var nameArr \[2\]string
@@ -87,18 +87,18 @@ var nameArr \[2\]string
 // Declare and assign nameArr := \[2\]string{"Alex", "Lena"}
 ```
 
-2. Slices
+- Slices
 ```go
 nameSlice := []string{"Alex", "Lena", "etc"}
 ```
 
-1. Get array/slice length
+- Get array/slice length
 
 ```go
 len(arr)
 ```
 
-2. Range
+- Range
 
 ```go
 arr[1:3]
@@ -106,7 +106,7 @@ arr[1:3]
 
 ## Conditionals
 
-1. if/else
+- if/else
 
 ```go
 if x < y {
@@ -118,7 +118,7 @@ if x < y {
 }
 ```
 
-1. switch
+- switch
 
 ```go
 switch color {
@@ -133,7 +133,7 @@ switch color {
 
 ## Loops
 
-1. Long method
+- Long method
 
 ```go
 i := 1
@@ -142,7 +142,7 @@ for i <= 10 {
 }
 ```
 
-2. Short method
+- Short method
 
 ```go
 for i := 1; i <= 10; i++ {
@@ -150,7 +150,7 @@ for i := 1; i <= 10; i++ {
 }
 ```
 
-3. FizzBuzz
+- FizzBuzz
 
 ```go
 for i := 1; i <= 100; i++ {
@@ -168,32 +168,32 @@ for i := 1; i <= 100; i++ {
 
 ## Maps
 
-1. Define map
+- Define map
 
 ```go
 emails := make(map[string]string)
 ```
 
-2. Assign key values
+- Assign key values
 
 ```go
 emails["alex"] = "alex@gmail.com"
 emails["lena"] = "lena@gmail.com"
 ```
 
-3. Get length
+- Get length
 
 ```go
 len(emails)
 ```
 
-4. Delete from map
+- Delete from map
 
 ```go
 delete(emails, "alex")
 ```
 
-5. Shorthand for defining and declaring
+- Shorthand for defining and declaring
 
 ```go
 emails := map[string]string{"alex":"alex@gmail.com"}
@@ -201,7 +201,7 @@ emails := map[string]string{"alex":"alex@gmail.com"}
 
 ## Range
 
-1. Loop through ids
+- Loop through ids
 
 ```go
 ids := \[\]int{3, 44, 6, 23, 1, 283}
@@ -211,7 +211,7 @@ for i, id := range ids {
 }
 ```
 
-2. Loop without index
+- Loop without index
 ```go
 ids := []int{3, 44, 6, 23, 1, 283}
 
@@ -220,7 +220,7 @@ for _, id := range ids {
 }
 ```
 
-1. Loop through map
+- Loop through map
 
 ```go
 emails := map\[string\]string{"alex":"alex@gmail.com", "lena":"lena@gmail.com"}
@@ -233,7 +233,7 @@ ___
 
 ## Pointers
 
-1. Declare pointer 
+- Declare pointer 
 ```go
 a := 5
 b := &a
@@ -242,20 +242,20 @@ fmt.Printf("%T\n", b)
 fmt.Println(*b)
 ```
 
-1. Get type of pointer
+- Get type of pointer
 
 ```go
 fmt.Printf("%T\n", b)
 ```
 
-2. Use \* to read value from address
+- Use \* to read value from address
 
 ```go
 fmt.Println(*b)
 fmt.Println(*&a)
 ```
 
-3. Change value with pointer
+- Change value with pointer
 
 ```go
 *b = 10
@@ -283,7 +283,7 @@ func main() {
 
 ## Structs
 
-1. Basic struct
+- Basic struct
 
 ```go
 type Person struct {
@@ -293,26 +293,26 @@ type Person struct {
 }
 ```
 
-2. Create new struct
+- Create new struct
 
 ```go
 person := Person{firstName: "Alex", lastName: "Han", age: 32}
 ```
 
-3. Shorthand for new struct
+- Shorthand for new struct
 
 ```go
 person := Person{"Alex", "Han", 32}
 ```
 
-4. Get property
+- Get property
 
 ```go
 person.lastName
 person.lastName = "Smith"
 ```
 
-5. Value reciever
+- Value reciever
 
 ```go
 func (p Person) greet() string {
@@ -320,7 +320,7 @@ func (p Person) greet() string {
 }
 ```
 
-6. Pointer reciever
+- Pointer reciever
 
 ```go 
 func (p *Person) getOld() {
