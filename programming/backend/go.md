@@ -1,7 +1,7 @@
 # Go
 
 
-### Project structure
+## Project structure
 
 ```
 workspace
@@ -79,12 +79,11 @@ func greet(name string) string {
 
 ## Arrays & Slices
 
-- Arrays
+- arrays
 
 ```go
-var nameArr \[2\]string
-
-// Declare and assign nameArr := \[2\]string{"Alex", "Lena"}
+var nameArr [2]string
+// Declare and assign nameArr := [2]string{"Alex", "Lena"}
 ```
 
 - Slices
