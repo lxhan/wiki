@@ -325,4 +325,115 @@ object EntityFactory {
 }
 ```
 
+## Enum class
 
+```kt
+enum class EntityType {
+    EASY, MEDIUM, HARD
+    
+    fun getFormattedName() = name.toLowerCase().capitalize() 
+}
+```
+
+## Sealed class
+
+```kt
+sealed class Entity() {
+    data class Easy(val id: String, val name: String): Entity()
+    data class Medium(val id: String, val name: String): Entity()
+    data class Hard(val id: String, val name: String, val multiplier: Float): Entity()
+}
+
+object EntityFactory {
+    fun create(type: EntityType) : Entity {
+        val id = UUID.randomUUID().toString()
+        val name = when(type) {
+            EntityType.EASY -> type.name
+            EntityType.MEDIUM -> type.getFormattedName()
+            EntityType.HARD -> "Hard"
+        }
+        
+        return when (type) {
+            EntityType.EASY -> Entity.Easy(id, name) 
+            EntityType.MEDIUM -> Entity.Medium(id, name) 
+            EntityType.HARD -> Entity.Hard(id, name, multiplier: 2f) 
+        }
+    }
+}
+```
+
+## Advanced functions
+
+- Higher order functions
+
+```kt
+fun printFilteredStrings(list: List<String>, predicate: (String) -> Boolean) {
+    list.forEach {
+        if (predicate(it)) {
+            println(it) 
+        }
+    }
+}
+
+fun main() {
+    val langs = listOf("Kotlin", "Java", "Python")
+    printFilteredStrings(langs, {it.startsWith("K")})
+    
+    printFilteredStrings(langs) {
+        it.startsWith("P") 
+    }
+}
+```
+
+- Filter
+
+```kt
+langs
+    .filterNotNull()
+    .filter {
+        it.startsWith("P") 
+    }
+    .forEach {
+        println(it) 
+    }
+```
+
+- Map
+
+```kt
+langs
+    .map {
+        it.length 
+    }
+```
+
+- Take
+
+```kt
+langs.take(3)
+
+langs.takeLast()
+```
+
+- Associate
+
+```kt
+val map = langs
+    .filterNotNull()
+    .associate { it to it.length }
+    .forEach { // it: Map.Entry<String, Int>
+        println("${it.value}, ${it.key}") 
+    }
+```
+
+- Find
+
+```kt
+val lang = langs.filterNotNull().find { it.startsWith("Java") }
+```
+
+- Empty
+
+```kt
+val lang = langs.filterNotNull().findLast { it.startsWith("Java") }.orEmpty()
+```
