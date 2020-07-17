@@ -7,7 +7,7 @@
 
 ## Condition
 
-```
+```kt
 when (cond) {
     null -> 1
     else -> 2
@@ -17,34 +17,39 @@ when (cond) {
 ## Functions
 
 - Basic function
-```
+
+```kt
 fun sayHi(): String {
     return "Hi"
 }
 ```
 
 - Nullable string
-```
+
+```kt
 fun sayHi(): String? {
     return "Hi"
 }
 ```
 
 - Unit type can be ommited
-```
+
+```kt
 fun main(): Unit {
     println("Hello World")
 }
 ```
 
 - Single expression function
-```
+
+```kt
 fun sayHi(): String = "Hi"
 ```
 
 - Function parameters
-```
-fun sahSmth(smth1: String, smth2: String) {
+
+```kt
+fun saySmth(smth1: String, smth2: String) {
     val msg = "$smth1 $smth2"
     println(msg)
 }
@@ -53,17 +58,20 @@ fun sahSmth(smth1: String, smth2: String) {
 ## Collections
 
 - Array
-```
+
+```kt
 val langs = arrayOf("kotlin", "java", "go")
 ```
 
 - List
-```
+
+```kt
 val langs = listOf("kotlin", "java", "go")
 ```
 
 - Map
-```
+
+```kt
 val langs = mapOf(1 to "kotlin", 2 to "java", 3 to "go")
 ```
 

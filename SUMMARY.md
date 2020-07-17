@@ -23,6 +23,7 @@
     - [Simple EC2 setting](programming/backend/simple_ec2.md)
     - [Kotlin](programming/backend/kotlin.md)
   - [Frontend](frontend)
+    - [C#](programming/frontend/csharp.md)
     - [CSS](programming/frontend/css.md)
     - [JavaScript](programming/frontend/javascript.md)
   - [Regular expressions](programming/regular_expressions.md)
