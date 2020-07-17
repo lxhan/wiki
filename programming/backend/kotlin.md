@@ -5,6 +5,10 @@
 - Mutable: `var`
 - Immutable: `val`
 
+{% hint style=info %}
+Visibility of vars, funs etc is public by default
+{% endhint %}
+
 ## Condition
 
 ```kt
@@ -75,6 +79,10 @@ val langs = listOf("kotlin", "java", "go")
 val langs = mapOf(1 to "kotlin", 2 to "java", 3 to "go")
 ```
 
+{% hint style=info %}
+By default collection type is immutable. Use `mutable...Of()` to make it mutable
+{% endhint %}
+
 - Loop
 
 ```kt
@@ -94,14 +102,227 @@ langs.forEach { lang ->
 - Loop using lambda syntax with index
 
 ```kt
-langs.forEach {index, lang -> 
+langs.forEachIndexed {index, lang -> 
     println("$lang is at index $index")
 }
 ```
 
+## vararg
+
+- String
+
+```kt
+fun saySmth(smth: String, vararg items) {
+    items.forEach { item ->
+        println("$smth $item") 
+    }
+}
+
+fun main() {
+    saySmth(smth: "Hey")
+    saySmth(smth: "Hey", ...items: "Kotlin", "Java", "Go")
+}
+```
+
+- Spread operator
+
+```kt
+fun main() {
+    saySmth(smth: "Hey", *items)
+}
+```
+
+## Named arguments
+
+```kt
+fun saySmth(greet: String, name: String) = println("$greet $name")
+
+fun main() {
+    saySmth(greet = "Hi", name = "Alex")
+}
+```
+
+## Default values for arguments
+
+```kt
+fun saySmth(greet: String = "Hi", name: String) = println("$greet $name")
+
+fun main() {
+    saySmth(name = "Alex")
+}
+```
+
+## Classes
+
+- Full syntax
+
+```kt
+class Person(_name: String, _age: Int) {
+    val name: String
+    val age: Int
+    
+    init {
+        name = _name
+        age = _age
+    }
+}
+```
+
+- Short syntax
+
+```kt
+class Person(val name: String, val age: Int) {
+
+}
+```
+
+- Secondary constructor
+
+```kt
+class Person(val name: String, val age: Int) {
+    constructor(): this("Alex", 33) {
+         
+    }
+}
+```
+
 {% hint style=info %}
-By default collection type is immutable. Use `mutable...Of()` to make it mutable
+Init block will always run before secondary constructor
 {% endhint %}
 
+- Properties
 
-## vararg
+```kt
+class Person(val name: String = "Alex", val age: Int = "33") {
+    var job: String? = null
+}
+```
+
+- Methods
+
+```kt
+class Person(val name: String = "Alex", val age: Int = "33") {
+    var job: String? = null
+    
+    fun getFullInfo() {
+        val jobCheck = job ?: "no job" 
+        println("$name, $age, $job") 
+    }
+}
+```
+
+- Override getter and setter
+
+```kt
+class Person(val name: String = "Alex", val age: Int = "33") {
+    var job: String? = null
+        set(value) {
+            field = value
+            println("overriding setter")
+        }
+        
+        get() {
+            println("overriding getter")
+            return field
+        }
+}
+```
+
+- `internal` - means that class is public within the module
+
+- `protected` - means that class will be available with the class or subclasses
+
+- `open` - to make a class inheritable
+
+
+## Interfaces
+
+- Basic interface
+
+```kt
+interface PersonInfoProvider {
+    fun printInfo(person: Person)
+}
+
+class BasicInfoProvider : PersonInfoProvider {
+    override fun printInfo(person: Person) {
+        println("info") 
+    }
+}
+
+fun main() {
+    val provider = BasicInfoProvider()
+    
+    provider.printInfo(Person())
+}
+```
+
+- Overriding interface
+
+```kt
+interface PersonInfoProvider {
+    val providerInfo: String
+    
+    fun printInfo(person: Person) {
+        println(providerInfo) 
+    }
+}
+
+class BasicInfoProvider : PersonInfoProvider {
+    override val providerInfo: String
+        get() = "BasicInfoProvider"
+        
+    override fun printInfo(person: Person) {
+        super.printInfo(person)
+    }
+}
+```
+
+- Check interface
+
+```kt
+if (infoProvider is PersonInfoProvider)
+if (infoProvider !is PersonInfoProvider)
+```
+
+- Casting
+
+```kt
+(infoProvider as PersonInfoProvider).printInfo()
+```
+
+## Object expressions
+
+```kt
+val provider = object : PersonInfoProvider {
+    override val providerInfo: String
+        get() = "new info"
+}
+```
+
+## Companion objects
+
+```kt
+class Entity private constructor(val id: Int) {
+    companion object {
+        const val pId = 23
+        fun create() = Entity(id) 
+    }
+}
+
+fun main() {
+    val entity = Entity.create()
+    
+    println(Entity.pId)
+}
+```
+
+## Object declarations
+
+```kt
+object EntityFactory {
+    fun create() = Entity(23)
+}
+```
+
+
