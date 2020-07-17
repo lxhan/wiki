@@ -75,6 +75,30 @@ val langs = listOf("kotlin", "java", "go")
 val langs = mapOf(1 to "kotlin", 2 to "java", 3 to "go")
 ```
 
+- Loop
+
+```kt
+for (lang in langs) {
+    println(lang)
+}
+```
+
+- Loop using lambda syntax
+
+```kt
+langs.forEach { lang ->
+    println(lang)
+}
+```
+
+- Loop using lambda syntax with index
+
+```kt
+langs.forEach {index, lang -> 
+    println("$lang is at index $index")
+}
+```
+
 {% hint style=info %}
 By default collection type is immutable. Use `mutable...Of()` to make it mutable
 {% endhint %}
