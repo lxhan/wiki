@@ -3,9 +3,22 @@
 ```sh
 docker pull postgres:alpine
 ```
+
 ### Run postgres in docker container
 ```sh
 docker run --name postgres-test -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres:alpine
+```
+
+### Run mysql in docker container
+```sh
+docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345 \
+--name my-mysql -v /var/lib/mysql mysql \
+--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+```
+
+### Copy sql dump to container
+```sh
+docker cp ~/Desktop/dump.sql [container id or name]:/path/create.sql
 ```
 
 ### Show all processes
