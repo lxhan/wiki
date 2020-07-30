@@ -2,7 +2,7 @@
 
 ## Add mysql to your PATH
 
-```bash
+```sh
 # Current Session
 export PATH=${PATH}:/usr/local/mysql/bin
 # Permanantly
@@ -12,9 +12,14 @@ echo 'export PATH="/usr/local/mysql/bin:$PATH"' >> ~/.bash_profile
 
 ## Login
 
-```bash
+```sh
 mysql -u root -p
 mysql -u root -h localhost -P 3307 -p
+```
+
+## Import sql file
+```sh
+mysql -u root -p db_name < file.sql
 ```
 
 ## Show Users
