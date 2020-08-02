@@ -1,7 +1,7 @@
 # Go
 
 
-### Project structure
+## Project structure
 
 ```
 workspace
@@ -16,58 +16,58 @@ workspace
 
 ## Variables
 
-1. String
+- String
 
-   ```go
-   var name string = "Alex"
-   var name = "Alex"
-   name := "Alex"
-   ```
+```go
+var name string = "Alex"
+var name = "Alex"
+name := "Alex"
+```
 
-2. Integer
+- Integer
 
-   ```go
-   var age int = 32
-   var age = 32
-   age := 32
-   ```
+```go
+var age int = 32
+var age = 32
+age := 32
+```
 
-3. Boolean
+- Boolean
 
-   ```go
-   var isMarried bool = true
-   var isMarried = true
-   const isMarried = true
-   isMarried := true
-   ```
+```go
+var isMarried bool = true
+var isMarried = true
+const isMarried = true
+isMarried := true
+```
 
-4. Float
+- Float
 
-   ```go
-   var size float32 = 1.3
-   var size = 1.3
-   size := 1.3
-   ```
+```go
+var size float32 = 1.3
+var size = 1.3
+size := 1.3
+```
 
-5. Shorthand for multiple vars assignment
+- Shorthand for multiple vars assignment
 
-   ```go
-   name, age := "Alex", 32
-   ```
+```go
+name, age := "Alex", 32
+```
 
-6. Shorthand for var
+- Shorthand for var
 
-   ```go
-   name := "Alex"
-   // Must be inside body
-   ```
+```go
+name := "Alex"
+// Must be inside body
+```
 
-7. Get type of variable
+- Get type of variable
 
-   ```go
-   fmt.Println("%T\n", name)
-   // ouputs "string"
-   ```
+```go
+fmt.Println("%T\n", name)
+// ouputs "string"
+```
 
 ## Functions
 
@@ -79,160 +79,163 @@ func greet(name string) string {
 
 ## Arrays & Slices
 
-1. Arrays
+- arrays
 
-   ```go
-   var nameArr \[2\]string
+```go
+var nameArr [2]string
+// Declare and assign nameArr := [2]string{"Alex", "Lena"}
+```
 
-    // Declare and assign nameArr := \[2\]string{"Alex", "Lena"}
+- Slices
 
-    ```
-2. Slices
 ```go
 nameSlice := []string{"Alex", "Lena", "etc"}
 ```
 
-1. Get array/slice length
+- Get array/slice length
 
-   ```go
-   len(arr)
-   ```
+```go
+len(arr)
+```
 
-2. Range
+- Range
 
-   ```go
-   arr[1:3]
-   ```
+```go
+arr[1:3]
+```
 
 ## Conditionals
 
-1. if/else
+- if/else
 
 ```go
 if x < y {
-  fmt.Println("x is less than y")
+    fmt.Println("x is less than y")
 } else if x > y {
-  fmt.Println("x is greater than y")
+    fmt.Println("x is greater than y")
 } else {
   //    
 }
 ```
 
-1. switch
+- switch
 
-   ```go
-   switch color {
-   case "blue":
+```go
+switch color {
+    case "blue":
     //
-   case "red":
+    case "red":
     //
-   default:
+    default:
     //
-   }
-   ```
+}
+```
 
 ## Loops
 
-1. Long method
+- Long method
 
-   ```go
-   i := 1
-   for i <= 10 {
-   // do smth
-   }
-   ```
+```go
+i := 1
+for i <= 10 {
+// do smth
+}
+```
 
-2. Short method
+- Short method
 
-   ```go
-   for i := 1; i <= 10; i++ {
-   // do smth
-   }
-   ```
+```go
+for i := 1; i <= 10; i++ {
+// do smth
+}
+```
 
-3. FizzBuzz
+- FizzBuzz
 
-   ```go
-   for i := 1; i <= 100; i++ {
-   if i % 15 == 0 {
-    fmt.Println("FizzBuzz")
-   } else if i % 3 == 0 {
-    fmt.Println("Fizz")
-   } else if i % 5 == 0 {
-    fmt.Println("Buzz")
-   } else {
-    fmt.Println(i)
-   }
-   }
-   ```
+```go
+for i := 1; i <= 100; i++ {
+    if i % 15 == 0 {
+        fmt.Println("FizzBuzz")
+    } else if i % 3 == 0 {
+        fmt.Println("Fizz")
+    } else if i % 5 == 0 {
+        fmt.Println("Buzz")
+    } else {
+        fmt.Println(i)
+    }
+}
+```
 
 ## Maps
 
-1. Define map
+- Define map
 
-   ```go
-   emails := make(map[string]string)
-   ```
+```go
+emails := make(map[string]string)
+```
 
-2. Assign key values
+- Assign key values
 
-   ```go
-   emails["alex"] = "alex@gmail.com"
-   emails["lena"] = "lena@gmail.com"
-   ```
+```go
+emails["alex"] = "alex@gmail.com"
+emails["lena"] = "lena@gmail.com"
+```
 
-3. Get length
+- Get length
 
-   ```go
-   len(emails)
-   ```
+```go
+len(emails)
+```
 
-4. Delete from map
+- Delete from map
 
-   ```go
-   delete(emails, "alex")
-   ```
+```go
+delete(emails, "alex")
+```
 
-5. Shorthand for defining and declaring
+- Shorthand for defining and declaring
 
-   ```go
-   emails := map[string]string{"alex":"alex@gmail.com"}
-   ```
+```go
+emails := map[string]string{"alex":"alex@gmail.com"}
+```
 
 ## Range
 
-1. Loop through ids
+- Loop through ids
 
-   ```go
+```go
+ids := \[\]int{3, 44, 6, 23, 1, 283}
 
-   ids := \[\]int{3, 44, 6, 23, 1, 283}
+for i, id := range ids {
+    fmt.Printf\("%d - id: %d\n", i, id\)
+}
+```
 
-    for i, id := range ids { fmt.Printf\("%d - id: %d\n", i, id\) }
+- Loop without index
+ 
+```go
+ids := []int{3, 44, 6, 23, 1, 283}
 
-    ```
-2. Loop without index
-    ```go
-    ids := []int{3, 44, 6, 23, 1, 283}
+for _, id := range ids {
+    fmt.Printf("id: %d\n", id)
+}
+```
 
-    for _, id := range ids {
-      fmt.Printf("id: %d\n", id)
-    }
-    ```
+- Loop through map
 
-1. Loop through map
+```go
+emails := map\[string\]string{"alex":"alex@gmail.com", "lena":"lena@gmail.com"}
 
-   ```go
-
-   emails := map\[string\]string{"alex":"alex@gmail.com", "lena":"lena@gmail.com"}
-
-    for k, v := range emails { fmt.Printf\("%s: %s\n", k, v\) }
-
-    ```
+for k, v := range emails {
+    fmt.Printf\("%s: %s\n", k, v\)
+}
+```
 ___
 
 ## Pointers
 
-1. Declare pointer 
+- Declare pointer 
+
 ```go
 a := 5
 b := &a
@@ -241,111 +244,114 @@ fmt.Printf("%T\n", b)
 fmt.Println(*b)
 ```
 
-1. Get type of pointer
+- Get type of pointer
 
-   ```go
-   fmt.Printf("%T\n", b)
-   ```
+```go
+fmt.Printf("%T\n", b)
+```
 
-2. Use \* to read value from address
+- Use \* to read value from address
 
-   ```go
-   fmt.Println(*b)
-   fmt.Println(*&a)
-   ```
+```go
+fmt.Println(*b)
+fmt.Println(*&a)
+```
 
-3. Change value with pointer
+- Change value with pointer
 
-   ```go
-   *b = 10
-   fmt.Println(a)
-   ```
+```go
+*b = 10
+fmt.Println(a)
+```
 
 ## Closure
 
 ```go
 func adder() func(int) int {
-  sum := 0
-  return func(x int) int {
-    sum += x
-    return sum
-  }
+    sum := 0
+    return func(x int) int {
+        sum += x
+        return sum
+    }
 }
 
 func main() {
-  sum := adder()
-  for i := 0; i <= 10; i++ {
-    fmt.Println(sum(i))
-  }
+    sum := adder()
+    for i := 0; i <= 10; i++ {
+        fmt.Println(sum(i))
+    }
 }
 ```
 
 ## Structs
 
-1. Basic struct
+- Basic struct
 
-   ```go
-   type Person struct {
-   firstName string
-   lastName string
-   age int
-   }
-   ```
+```go
+type Person struct {
+    firstName string
+    lastName string
+    age int
+}
+```
 
-2. Create new struct
+- Create new struct
 
-   ```go
-   person := Person{firstName: "Alex", lastName: "Han", age: 32}
-   ```
+```go
+person := Person{firstName: "Alex", lastName: "Han", age: 32}
+```
 
-3. Shorthand for new struct
+- Shorthand for new struct
 
-   ```go
-   person := Person{"Alex", "Han", 32}
-   ```
+```go
+person := Person{"Alex", "Han", 32}
+```
 
-4. Get property
+- Get property
 
-   ```go
-   person.lastName
-   person.lastName = "Smith"
-   ```
+```go
+person.lastName
+person.lastName = "Smith"
+```
 
-5. Value reciever
+- Value reciever
 
-   ```go
-   func (p Person) greet() string {
-   return "Hello, my name is " + p.firstName + "my age is " + strconv.Itoa(p.age)
-   }
-   ```
+```go
+func (p Person) greet() string {
+    return "Hello, my name is " + p.firstName + "my age is " + strconv.Itoa(p.age)
+}
+```
 
-6. Pointer reciever
+- Pointer reciever
 
-   ```go 
-    func \(p \*Person\) getOld\(\) { p.age++ }
+```go 
+func (p *Person) getOld() {
+    p.age++
+}
 
-    func \(p \*Person\) changeName\(newName string\) { p.firstName = newName }
-
-    ```
+func (p *Person) changeName(newName string) {
+    p.firstName = newName
+}
+```
 ___
 
 ## Interfaces
 
 ```go
 type Shape interface {
-  area() float64
+    area() float64
 }
 
 type Circle struct {
-  x, y, radius float64
+    x, y, radius float64
 }
 
 func (c Circle) area() float64 {
-  return math.Pi * c.radius * c.radius
+    return math.Pi * c.radius * c.radius
 }
 
 func getArea(s Shape) float64 {
-  return s.area
+    return s.area
 }
 ```
 
@@ -353,17 +359,17 @@ func getArea(s Shape) float64 {
 
 ```go
 import (
-  "fmt"
-  "net/http"
+    "fmt"
+    "net/http"
 )
 
 func index(w http.ResponseWriter, r *http.Request) {
-  fmt.Fprint(w, "Hello")
+    fmt.Fprint(w, "Hello")
 }
 
 func main() {
-  http.HandleFunc("/", index)
-  http.ListenAndServe(":3000", nil)
+    http.HandleFunc("/", index)
+    http.ListenAndServe(":3000", nil)
 }
 ```
 
