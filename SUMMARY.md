@@ -25,4 +25,5 @@
     - [CSS](programming/frontend/css.md)
     - [JavaScript](programming/frontend/javascript.md)
   - [Regular expressions](programming/regular_expressions.md)
+  - [Vim](vim.md)
 
