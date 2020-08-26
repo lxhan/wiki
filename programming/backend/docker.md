@@ -16,6 +16,11 @@ docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345 \
 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 ```
 
+### Run mongo in docker container
+```sh
+docker run -it -v /home/user/mongodata:/data/db -p 27017:27017 --name mongodb -d mongo
+```
+
 ### Copy sql dump to container
 ```sh
 docker cp ~/Desktop/dump.sql [container id or name]:/path/create.sql
@@ -477,12 +482,6 @@ Mounts
 - Source: xxx is where it lives on the host
 
 {% endhint %}
-
-
-### Check volumes
-```
-docker volume ls
-```
 
 **There is no way to tell volumes apart for instance with 2 mysql containers, so we used named volumes**
 
