@@ -19,6 +19,7 @@
     - [Postgres](programming/backend/postgres.md)
     - [MySQL](programming/backend/mysql.md)
     - [Docker](programming/backend/docker.md)
+    - [Nginx](programming/backend/nginx.md)
     - [AWS](programming/backend/AWS.md)
     - [Apache](programming/backend/apache.md)
     - [Simple EC2 setting](programming/backend/simple_ec2.md)

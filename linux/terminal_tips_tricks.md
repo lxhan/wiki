@@ -112,3 +112,35 @@ tail -f /var/log/httpd/access_log.2020-03-0*
 ```bash
 cut -d: -f1 /etc/passwd
 ```
+
+## Check if something running on specific port
+
+```sh
+apt install net-tools
+
+netstat -plant | grep 443
+
+lsof -i :80
+```
+
+## CPU info 
+
+```sh
+nproc
+
+lscpu
+```
+
+## Get and set user limits
+
+```sh
+ulimit -n
+```
+
+## Benchmark server
+
+```sh
+sudo apt install apache2-utils -y
+
+ab -n 100 -c 10 http://ip-address/
+```

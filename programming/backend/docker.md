@@ -7,6 +7,8 @@ docker pull postgres:alpine
 ### Run postgres in docker container
 ```sh
 docker run --name postgres-test -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres:alpine
+
+docker run --name pg-docker -e POSTGRES_PASSWORD=1234 -d -p 5432:5432 -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres
 ```
 
 ### Run mysql in docker container

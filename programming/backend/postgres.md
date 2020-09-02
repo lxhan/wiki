@@ -11,6 +11,9 @@ initdb -D /usr/local/pgsql/data
 pg_ctl -D /usr/local/pgsql/data -l logfile start
 createdb test
 psql test
+
+alter user testuser with encrypted password 'qwerty';
+grant all privileges on database testdb to testuser;
 ```
 
 - Start/stop postgres on Ubuntu
@@ -28,6 +31,8 @@ psql
 ## Connect
 ```sh
 psql -h localhost -p 5432 -U user db
+
+psql -h localhost -p 5432 -U postgres -W
 ```
 
 ## Comparison operators
