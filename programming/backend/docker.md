@@ -18,6 +18,19 @@ docker run -p 5432:5432 -d \
     postgres
 ```
 
+
+## Backup postgres db   
+```sh
+docker exec -t your-db-container  pg_dumpall -c -U postgres | gzip > ./tmp/dump_$(date +"%Y-%m-%d_%H_%M_%S").gz
+```
+
+## Restore from backup
+```sh
+gzip -d file.gz
+
+cat your_dump.sql | docker exec -i your-db-container psql -U postgres
+```
+
 ### Run mysql in docker container
 ```sh
 docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345 \
