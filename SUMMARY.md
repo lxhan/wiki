@@ -1,7 +1,8 @@
 # Summary
 
-- [Algorithms](algorithms)
-  - [Big O](algorithms/big_o.md)
+- [CS](cs)
+  - [Big O](cs/big_o.md)
+  - [Data structures](cs/data_struct.md)
 
 - [Linux](linux)
   - [Basics](linux/basics.md)
