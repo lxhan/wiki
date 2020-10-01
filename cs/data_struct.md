@@ -9,4 +9,6 @@ Measure efficiency based on 4 metrics:
 * Inserting equation
 * Deleting equation
 
+## Array
+
 

@@ -2,13 +2,28 @@
 
 - [Great video explanation](https://www.youtube.com/watch?v=kS_gr2_-ws8)
 
-## Algorithms complexity
+## TLDR 
 - Constant `O(1)` (ideal)
 - Logarithmic `O(log n)` (excellent)
-- Linear `O(n)` (ok)
+- Linear `O(n)` (decent)
 - Quadratic `O(n^2)` (bad)
-- Exponential `O(2^n)`
+- Exponential `O(2^n)` (very bad)
 - Factorial `O(n!)`
+
+## Types of time complexity equations
+
+### `O(1)`
+
+No matter what size of your data set is, the task will be completed in a single instruction.
+
+### `O(log n)`
+
+Gets more efficient as the size  of the data set increases.
+
+### `O(n)`
+
+For every element you add to the data set the amount of instructions to complete that function will increase by the same amount.
+
 
 ## Shorthands
 1. Arithmetic operations are constant
