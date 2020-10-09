@@ -3,6 +3,7 @@
 - [CS](cs)
   - [Big O](cs/big_o.md)
   - [Data structures](cs/data_struct.md)
+  - [OOP](cs/oop.md)
 
 - [Linux](linux)
   - [Basics](linux/basics.md)
@@ -25,6 +26,7 @@
     - [Apache](programming/backend/apache.md)
     - [Simple EC2 setting](programming/backend/simple_ec2.md)
     - [Kotlin](programming/backend/kotlin.md)
+    - [Node](programming/backend/node.md)
   - [Frontend](frontend)
     - [C#](programming/frontend/csharp.md)
     - [CSS](programming/frontend/css.md)
