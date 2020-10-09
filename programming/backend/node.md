@@ -1,6 +1,6 @@
 ## Event loop
 
-A loop that pick events from the event queue and pushes their callbacks to the call stack.
+- A loop that pick events from the event queue and pushes their callbacks to the call stack.
 
 ---
 
@@ -16,3 +16,13 @@ A loop that pick events from the event queue and pushes their callbacks to the c
 
 ---
 
+
+- If call stack and loop queue are both empty node will exit.
+- Besides `V8` and `libuv` Node has these external dependencies: 
+  - `http-parser`
+  - `c-ares`
+  - `OpenSSL`
+  - `zlib`
+- Node can run with Chakra engine
+- IIFE - Immediately Invoked Function Expression
+- `require.resolve('module-name')` - check for existence of a local module
