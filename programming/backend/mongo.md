@@ -257,3 +257,11 @@ db.posts.find({ views: { $gte: 7 } })
 db.posts.find({ views: { $lt: 7 } })
 db.posts.find({ views: { $lte: 7 } })
 ```
+
+## DB backup & restore
+
+```sh
+mongodump --uri "mongodb+srv://url.mongodb.net" -u alex -p qwerty -d db-name
+
+mongorestore --uri "mongodb+srv://url.mongodb.net" -u alex -p qwerty -d new-db-name dump/db-name
+```
