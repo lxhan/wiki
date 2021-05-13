@@ -49,3 +49,8 @@ aws s3 cp ~/Desktop/image.jpg s3://bucket-name/files/image.jpg
 ```sh
 aws s3 presign s3://bucket-name/files/image.jpg --expires-in 300
 ```
+
+### Login to ECR
+```sh
+aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin account-name.dkr.ecr.us-west-2.amazonaws.com
+```

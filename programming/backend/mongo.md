@@ -265,3 +265,9 @@ mongodump --uri "mongodb+srv://url.mongodb.net" -u alex -p qwerty -d db-name
 
 mongorestore --uri "mongodb+srv://url.mongodb.net" -u alex -p qwerty -d new-db-name dump/db-name
 ```
+
+## Regex search
+
+```sh
+db.posts.findOne({"title" : {$regex : ".*dev.*"}})
+```
