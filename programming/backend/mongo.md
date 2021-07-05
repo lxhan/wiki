@@ -271,3 +271,20 @@ mongorestore --uri "mongodb+srv://url.mongodb.net" -u alex -p qwerty -d new-db-n
 ```sh
 db.posts.findOne({"title" : {$regex : ".*dev.*"}})
 ```
+
+## Find by last chars of id
+
+```sh
+db.posts.aggregate([
+    {
+        $addFields: {
+            tempUserId: { $toString: '$_id' }
+        }
+    },
+    {
+        $match: {
+            tempUserId: { $regex: '3fs5', $options: 'i' }
+        }
+    }
+])
+```
