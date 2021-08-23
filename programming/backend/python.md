@@ -1,14 +1,10 @@
-# Python
-
-## Tips and tricks
-
-1. Ternary operator
+## Ternary operator
 
 ```python
 x = 1 if condition else 0
 ```
 
-1. Large numbers
+## Large numbers
 
 ```python
 num = 10000000000
@@ -26,7 +22,7 @@ num = 10_000_000_000
 print(f'{total:,}')
 ```
 
-1. Context manager
+## Context manager
 
 ```python
 with open('test.txt', 'r') as f:
@@ -37,9 +33,9 @@ word_count = len(words)
 print(word_count)
 ```
 
-* When managing resources \(files, database, streams\) consider using context manager
+## When managing resources \(files, database, streams\) consider using context manager
 
-1. Access index in for loop
+## Access index in for loop
 
 ```python
 arr = ['one', 'two', 'three']
@@ -48,7 +44,7 @@ for index, num in enumerate(arr, start = 0):
   print(index, num)
 ```
 
-1. Loop through 2 or more arrays
+## Loop through 2 or more arrays
 
 ```python
 names = ['Peter Parker', 'Bruce Wayne', 'Barry Allen']
@@ -58,7 +54,7 @@ for name, hero in zip(names, heroes):
   print(f'{name} is {hero}')
 ```
 
-1. Unpacking
+## Unpacking
 
 ```python
 a, b = (1, 2)
@@ -68,7 +64,7 @@ a, b, *_ = (1, 2, 3, 4, 5)
 a, b, *c, d = (1, 2, 3, 4, 5)
 ```
 
-1. Class attributes access
+## Class attributes access
 
 ```python
 class Person():
@@ -84,7 +80,7 @@ setattr(person, first_key, first_val)
 first = getattr(person, first_key)
 ```
 
-1. Hide password or input
+## Hide password or input
 
 ```python
 from getpass import getpass
@@ -95,7 +91,6 @@ password = getpass('password')
 
 ## virtualenv
 
-### Frequently used commands
 Old way
 * `pip install virtual env`
 * `virtualenv ENV`
