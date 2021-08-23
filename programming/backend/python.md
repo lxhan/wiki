@@ -105,13 +105,13 @@ Old way
 
 New way
 
-* mkdir project
-* python3 -m venv project/venv
-* source project/venv/bin/activate
-* python3 -m pip install --upgrade pip
-* pip freeze > requirements.txt
-* pip install -r requirements.txt
-* deactivate
+* `mkdir project`
+* `python3 -m venv project/venv`
+* `source project/venv/bin/activate`
+* `python3 -m pip install --upgrade pip`
+* `pip freeze > requirements.txt`
+* `pip install -r requirements.txt`
+* `deactivate`
 
 ### Save dependencies to requirements
 
