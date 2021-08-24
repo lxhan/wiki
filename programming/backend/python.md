@@ -24,6 +24,10 @@ print(f'{total:,}')
 
 ## Context manager
 
+{% hint style="info" %}
+When managing resources \(files, database, streams\) consider using context manager
+{% endhint %}
+
 ```python
 with open('test.txt', 'r') as f:
   file_contents = f.read()
@@ -33,7 +37,6 @@ word_count = len(words)
 print(word_count)
 ```
 
-## When managing resources \(files, database, streams\) consider using context manager
 
 ## Access index in for loop
 
@@ -91,19 +94,10 @@ password = getpass('password')
 
 ## virtualenv
 
-Old way
-* `pip install virtual env`
-* `virtualenv ENV`
-* `source ENV/bin/activate`
-* `pip list`
-* `deactivate`
-
-New way
-
 * `mkdir project`
-* `python3 -m venv project/venv`
+* `python3 -m venv project/venv --upgrade-deps`
 * `source project/venv/bin/activate`
-* `python3 -m pip install --upgrade pip`
+* `python3 -m pip install -U autopep8`
 * `pip freeze > requirements.txt`
 * `pip install -r requirements.txt`
 * `deactivate`
