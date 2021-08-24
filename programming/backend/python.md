@@ -16,10 +16,10 @@ num = 10000000000
 num = 10_000_000_000
 ```
 
-* and to print it:
+* and to print it with commas:
 
 ```python
-print(f'{total:,}')
+print(f'{num:,}')
 ```
 
 ## Context manager
