@@ -192,6 +192,23 @@ db.posts.update({ title: 'Post Two' },
 })
 ```
 
+## Rename in array
+```sh
+db.posts.updateMany({ title: 'Post Two' }, [{
+    '$set': {
+      'modifierGroups': {
+        '$map': {
+          'input': '$modifierGroups', 
+          'in': {
+            'modifierId': '$$this.modifier',
+            'sortOrder': '$$this.sortOrder'
+          }
+        }
+      }
+    }
+}])
+```
+
 ## Delete Row
 
 ```sh
