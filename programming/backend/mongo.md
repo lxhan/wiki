@@ -195,9 +195,9 @@ db.posts.update({ title: 'Post Two' },
 ## Rename in array
 ```sh
 db.posts.updateMany({ title: 'Post Two' }, [{
-    '$set': {
+    $set: {
       'modifierGroups': {
-        '$map': {
+        $map: {
           'input': '$modifierGroups', 
           'in': {
             'modifierId': '$$this.modifier',
