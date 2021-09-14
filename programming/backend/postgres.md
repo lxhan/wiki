@@ -1,7 +1,8 @@
 # Postgresql
 
 ## Create 
-- Init db
+### Init db
+
 ```sh
 adduser postgres
 mkdir /usr/local/pgsql/data
@@ -12,17 +13,17 @@ pg_ctl -D /usr/local/pgsql/data -l logfile start
 createdb test
 psql test
 
-alter user testuser with encrypted password 'qwerty';
-grant all privileges on database testdb to testuser;
+alter user testuser with encrypted password 'qwerty'
+grant all privileges on database testdb to testuser
 ```
 
-- Start/stop postgres on Ubuntu
+### Start/stop postgres on Ubuntu
 ```sh
 sudo service postgresql start
 sudo service postgresql stop 
 ```
 
-- Create db from file
+### Create db from file
 ```sh
 psql
 \i /path/to/db/file.sql
