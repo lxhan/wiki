@@ -2,27 +2,27 @@
 
 ## Everything in `src` folder and everything in every folder
 
-```bash
+```sh
 src/**/*
 ```
 
-## Показывает 10 крупнейших по размеру каталогов на верхнем уровне с общей загрузкой. Все в мегабайтах. 
-```bash
+## Shows 10 biggest directories by size in MB
+```sh
 du -cms .[^.]*/ */ | sort -rn | head
 ```
 
-## Показывает все процессы 
-```bash
+## Shows all processes 
+```sh
 ps ax
 ```
 
 ## Find files by extension
-```bash
+```sh
 find $dir -type f -name '*.txt'
 ```
 
 ## Install `tar.gz`
-```bash
+```sh
 sudo tar xzvf archive-name.tar.gz
 cd archive-name
 ./configure
@@ -31,17 +31,17 @@ sudo make install
 ```
 
 ## Install dotfiles with stow 
-```bash
+```sh
 stow -t ~/ *
 ```
 
 ## Setup debugger for chrome with chromium 
-```bash
+```sh
 sudo ln -s /usr/bin/chromium /usr/bin/google-chrome
 ```
 
 ## Grep usage example
-```bash
+```sh
 urxvt --help 2>&1 | grep font
 ```
 
@@ -51,7 +51,7 @@ urxvt --help 2>&1 | grep font
 ## Install `.deb` package
   1. Depackage
 
-     ```bash
+     ```sh
      sudo dpkg -i /path/to/deb/file
      ```
 
@@ -59,57 +59,57 @@ urxvt --help 2>&1 | grep font
 
   2. Install
 
-     ```bash
+     ```sh
      sudo apt-get install -f
      ```
 
      `sudo apt-get install -f` command tries to fix this broken package by installing the missing dependency.
 
 ## Go back 
-```bash
+```sh
 cd -
 ```
 
 ## History arrow down / arrow up alternative 
-```bash
+```sh
 ctrl + p
 ctrl + n
 ```
 
 ## Move one word left / right 
-```bash
+```sh
 alt + b 
 alt + f
 ```
 
 ## Delete symbol to the right / left from cursor 
-```bash
+```sh
 ctrl + d 
 ctrl + h
 ```
 
 ## Cut from cursor to start / end of the line 
-```bash
+```sh
 ctrl + u / ctrl + k
 ```
 
 ## Cut word to the left from cursor 
-```bash
+```sh
 ctrl + w
 ```
 
 ## Paste from buffer 
-```bash
+```sh
 ctrl + y
 ```
 
 ## Watch logs
-```bash
+```sh
 tail -f /var/log/httpd/access_log.2020-03-0*
 ```
 
 ## List all local users
-```bash
+```sh
 cut -d: -f1 /etc/passwd
 ```
 

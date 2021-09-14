@@ -1,88 +1,88 @@
-# URxvt
 
-### Install and cosmetics
+## Install and cosmetics
 
-1. Install \(debian\)
+### Install (debian)
 
-   ```bash
-   sudo apt-get install rxvt-unicode
-   ```
+```sh
+sudo apt-get install rxvt-unicode
+```
 
-2. Create ~/.Xresources
+### Create ~/.Xresources
 
-   ```bash
-   vi ~/.Xresources
-   ```
+```sh
+vi ~/.Xresources
+```
 
-3. In .Xresources file change font
+### In .Xresources file change font
 
-   ```text
-   URxvt.font: xft:monospace:size=10
-   ```
+```sh
+URxvt.font: xft:monospace:size=10
+```
 
-4. Then load new config and do it everytime you change it
+### Then load new config and do it everytime you change it
 
-   ```bash
-   xrdb ~/.Xresources
-   ```
+```sh
+xrdb ~/.Xresources
+```
 
-5. Optionally remove the scrollbar
+### Optionally remove the scrollbar
 
-   ```text
-   URxvt.scrollBar: false
-   ```
+```sh
+URxvt.scrollBar: false
+```
 
-6. Default copy command is `Ctrl + Alt + c` and default paste is `Shift + Insert` or `Ctrl + Alt + v`
+Default copy command is `Ctrl + Alt + c` and default paste is `Shift + Insert` or `Ctrl + Alt + v`
 
-### Useful plugins
+## Useful plugins
 
-1. [Basic plugins you need are here](https://github.com/bookercodes/awesome-urxvt)
-2. Default location for plugins
+### [Basic plugins you need are here](https://github.com/bookercodes/awesome-urxvt)
+### Default location for plugins
 
-   `~/urxvt/ext`
+`~/urxvt/ext`
 
-   or as it was said in other sources
+or as it was said in other sources
 
-   `/usr/lib/urxvt/perl`
+`/usr/lib/urxvt/perl`
 
-   In the case of \(Ubuntu 18.04 and i3wm\) first option is working fine
+In the case of (Ubuntu 18.04 and i3wm) first option is working fine
 
-3. Copy source url and download it into **ext** folder
+### Copy source url and download it into **ext** folder
 
-   ```bash
-   wget https://raw.githubusercontent.com/effigies/urxvt-perl/master/fullscreen
-   ```
+```sh
+wget https://raw.githubusercontent.com/effigies/urxvt-perl/master/fullscreen
+```
 
-4. In _Xresources_ load the plugin
+### In _Xresources_ load the plugin
 
-   ```text
-   URxvt.perl-ext-common: fullscreen
-   ```
+```sh
+URxvt.perl-ext-common: fullscreen
+```
 
-   and bind key
+and bind key
 
-   ```text
-   URxvt.keysym.F11: perl:fullscreen:switch
-   ```
+```sh
+URxvt.keysym.F11: perl:fullscreen:switch
+```
 
-5. Tabbedex particular case
+### Tabbedex particular case
 
-   [git link](https://github.com/mina86/urxvt-tabbedex)
+[git link](https://github.com/mina86/urxvt-tabbedex)
 
-6. install
+### install
 
-   ```text
-   curl https://raw.githubusercontent.com/mina86/urxvt-tabbedex/master/install | sh
-   ```
+```sh
+curl https://raw.githubusercontent.com/mina86/urxvt-tabbedex/master/install | sh
+```
 
-7. test before loading
+### test before loading
 
-   ```text
-   urxvt -pe tabbedex
-   ```
+```sh
+urxvt -pe tabbedex
+```
 
-8. after testing add it as usual perl plugin
-9. default keybinding:
+after testing add it as usual perl plugin
+
+### default keybinding:
 
    | Key | Description |
    | :--- | :--- |
@@ -100,9 +100,9 @@
 * [archwiki perl extensions](https://wiki.archlinux.org/index.php/rxvt-unicode#Perl_extensions)
 * [series of articles about urxvt](https://addy-dclxvi.github.io/post/configuring-urxvt/)
 
-My urxvt config \(21.05.2019\)
+My urxvt config (21.05.2019)
 
-```text
+```sh
 ! general
 URxvt.font: xft:Hasklug Nerd Font:style=Regular:size=12, xft:DejaVu Sans:pixelsize=10
 URxvt.scrollBar: false
