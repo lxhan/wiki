@@ -1,3 +1,9 @@
+## Connect
+
+```sh
+mongo "mongodb+srv://url.mongodb.net" -u alex -p pass
+```
+
 ## Show All Databases
 
 ```sh
@@ -19,7 +25,7 @@ use test
 ## Drop
 
 ```sh
-db.dropDatabase()
+db.collection.drop()
 ```
 
 ## Create Collection
