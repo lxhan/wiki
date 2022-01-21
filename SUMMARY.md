@@ -27,6 +27,7 @@
     - [Simple EC2 setting](programming/backend/simple_ec2.md)
     - [Kotlin](programming/backend/kotlin.md)
     - [Node](programming/backend/node.md)
+    - [Ansible](programming/backend/ansbile.md)
   - [Frontend](frontend)
     - [C#](programming/frontend/csharp.md)
     - [CSS](programming/frontend/css.md)
