@@ -18,7 +18,7 @@ Create public and private subnets for each availability zone ex. us-west-2a, us-
 - Go to `Subnet associations`, click edit and add your public subnets
 
 ## ECS cluster
-[Follow this guide and spin up fargate containers and configure deployment](programming/backend/blue_green_codedeploy.md)
+[Follow this guide and spin up fargate containers and configure deployment](/programming/backend/blue_green_codedeploy.md)
 
 > It is important to add your private subnets to `task-service.json` and `appspec.yaml` and also under network configuration make sure that assignPublicIp is `DISABLED`
 
