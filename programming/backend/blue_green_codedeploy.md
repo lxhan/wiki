@@ -7,10 +7,10 @@ aws ecr get-login-password --region XXX | docker login --username AWS --password
 docker build -t XXX:dev .
 
 # tag image
-docker tag XXX:dev XXX.dkr.ecr.XXX.amazonaws.com/orderspot-server:dev
+docker tag XXX:dev XXX.dkr.ecr.XXX.amazonaws.com/XXX:dev
 
 # push
-docker push XXX:dev XXX.dkr.ecr.XXX.amazonaws.com/orderspot-server:dev
+docker push XXX:dev XXX.dkr.ecr.XXX.amazonaws.com/XXX:dev
 ```
 
 ## ECS cluster
