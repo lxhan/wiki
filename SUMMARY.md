@@ -30,6 +30,7 @@
     - [Ansible](programming/backend/ansbile.md)
     - [Static IP on Fargate](programming/backend/static_ip_fargate.md)
     - [Blue/Green deployment using AWS CodeDeploy](programming/backend/blue_green_codedeploy.md)
+    - [ECS auto scaling](programming/backend/ecs_autoscaling.md)
   - [Frontend](frontend)
     - [C#](programming/frontend/csharp.md)
     - [CSS](programming/frontend/css.md)
