@@ -28,6 +28,8 @@
     - [Kotlin](programming/backend/kotlin.md)
     - [Node](programming/backend/node.md)
     - [Ansible](programming/backend/ansbile.md)
+    - [Static IP on Fargate](programming/backend/static_ip_fargate.md)
+    - [Blue/Green deployment using AWS CodeDeploy](programming/backend/blue_green_codedeploy.md)
   - [Frontend](frontend)
     - [C#](programming/frontend/csharp.md)
     - [CSS](programming/frontend/css.md)
