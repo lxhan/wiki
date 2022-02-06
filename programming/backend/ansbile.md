@@ -61,6 +61,14 @@ ansible all -m get_url -a "url=https://github.com/lxhan/test dest=/home/lx" -b
 ansible all -a "df -h" -vvvvv
 ```
 
+## Playbook
+
+### Install with snap
+```sh
+- name: install docker
+  community.general.snap:
+    name: docker
+```
 
 ## Links
 
