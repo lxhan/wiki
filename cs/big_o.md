@@ -24,6 +24,15 @@ Gets more efficient as the size  of the data set increases.
 
 For every element you add to the data set the amount of instructions to complete that function will increase by the same amount.
 
+Maximum number of of guesses is the same as the size of the list.
+
+
+- Algorithm speed isn't measured, but in growth of the number of operations.
+- Instead, we talk about how quickly the runtime of an algorithm increases as the size of the input increases.
+- Run time of algorithms is expressed in big O notation.
+- O(log n) is faster than O(n), but it gets a lot faster as the list of items grows.
+
+
 
 ## Shorthands
 1. Arithmetic operations are constant

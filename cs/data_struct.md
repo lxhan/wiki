@@ -35,6 +35,10 @@ The ArrayList can be thought of as a growing array.
 
 Sequential access data structure in which we add and remove elements according to LIFO (last in first out)
 
+Stack has 2 operations: push and pop
+
+All function calls go onto the call stack
+
 Real world example: undo/redo
 
 - Accessing, Searching: `O(n)`
