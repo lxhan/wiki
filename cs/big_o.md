@@ -18,13 +18,29 @@ No matter what size of your data set is, the task will be completed in a single 
 
 ### `O(log n)`
 
+ex. binary search
+
 Gets more efficient as the size  of the data set increases.
 
 ### `O(n)`
 
+ex. simple search
+
 For every element you add to the data set the amount of instructions to complete that function will increase by the same amount.
 
 Maximum number of of guesses is the same as the size of the list.
+
+### `O(n * log n)`
+
+ex. quicksort
+
+### `O(n^2)`
+
+ex. selection sort
+
+### `O(n!)`
+
+ex. traveling salesperson
 
 
 - Algorithm speed isn't measured, but in growth of the number of operations.

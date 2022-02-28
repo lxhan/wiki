@@ -3,6 +3,7 @@
 - [CS](cs)
   - [Big O](cs/big_o.md)
   - [Data structures](cs/data_struct.md)
+  - [Algorithms](cs/algorithms.md)
   - [OOP](cs/oop.md)
 
 - [Linux](linux)
