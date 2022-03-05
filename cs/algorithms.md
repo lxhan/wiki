@@ -32,3 +32,10 @@
 - If you are implementing quicksort, choose a random element as the pivot. The average runtime of quicksort is `O(n log n)`.
 - The constant in Big O notation can matter sometimes. That's why quicksort is faster than merge sort.
 - The constant almost never matters for simple search vs binary search, because `O(log n)` is so much faster than `O(n)` when your list gets big.
+
+### Hash tables
+
+Good for
+- Modeling relationships from one thing to another thing
+- Filtering out duplicates
+- Caching/memorizing data instead of making your server do work
