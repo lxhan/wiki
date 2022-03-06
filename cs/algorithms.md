@@ -35,6 +35,11 @@
 
 ### Hash tables
 
+- You can make hash table by combining a hash function with an array
+- Hash tables need hash function that minimizes collisions
+- Really fast search, insert and delete
+- When load factor is greater than 0.7, it's time to resize hash table
+
 Good for
 - Modeling relationships from one thing to another thing
 - Filtering out duplicates
