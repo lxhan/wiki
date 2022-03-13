@@ -44,3 +44,15 @@ Good for
 - Modeling relationships from one thing to another thing
 - Filtering out duplicates
 - Caching/memorizing data instead of making your server do work
+
+### Breadth first search
+
+- Breadth first search tells you if there is a path from A to B and find the shortest
+- If you have a problem like "find the shortest x", try modeling your problem as a graph, and use breadth first search to solve
+- A directed graph has arrows and the relationship follows the direction of the arrow
+- Undirected graphs don't have arrows and the relationship goes both ways
+- Queues are FIFO
+- Stacks are LIFO
+- To find the shortest path we must check in the order nodes are added to the search list
+- Once checked make sure you don't check same node again, otherwise you might end up in an infinite loop
+- Running time of breadth first search is `O(V + E)`, where V for number of vertices and E for number of edges
