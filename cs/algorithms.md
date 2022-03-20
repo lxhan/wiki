@@ -69,3 +69,5 @@ Dijkstra's algorithm has 4 steps:
 - Dijkstra's algorithm is used to calculate the shortest path for a weighted graph
 - Dijkstra's algorithm works when all the weights are positive
 - For negative weights use Bellman-Ford algorithm
+
+### Greedy algorithms
