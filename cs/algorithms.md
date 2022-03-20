@@ -56,3 +56,16 @@ Good for
 - To find the shortest path we must check in the order nodes are added to the search list
 - Once checked make sure you don't check same node again, otherwise you might end up in an infinite loop
 - Running time of breadth first search is `O(V + E)`, where V for number of vertices and E for number of edges
+
+### Dijkstra
+
+Dijkstra's algorithm has 4 steps:
+- Find cheapest node. This is the node you can get to in the least amount of time
+- Check whether there's a cheaper path to the neighbors of this node and if so update their cost
+- Repeat until you've done this for every node in the graph
+- Calculate the final path 
+  
+- Breadth first search is used to calculate the shortest path for an unweighted graph
+- Dijkstra's algorithm is used to calculate the shortest path for a weighted graph
+- Dijkstra's algorithm works when all the weights are positive
+- For negative weights use Bellman-Ford algorithm
