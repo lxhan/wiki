@@ -1,10 +1,9 @@
-# Basic commands to run a new container 
-### Pull postgres image
+## Pull postgres image
 ```sh
 docker pull postgres:alpine
 ```
 
-### Run postgres in docker container
+## Run postgres in docker container
 ```sh
 docker run --name postgres-test -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres:alpine
 
@@ -18,7 +17,6 @@ docker run -p 5432:5432 -d \
     postgres
 ```
 
-
 ## Backup postgres db   
 ```sh
 docker exec -t your-db-container  pg_dumpall -c -U postgres | gzip > /home/user/dump_$(date +"%Y-%m-%d").gz
@@ -31,80 +29,97 @@ gzip -d file.gz
 cat your_dump.sql | docker exec -i your-db-container psql -U postgres
 ```
 
-### Run mysql in docker container
+## Run mysql in docker container
 ```sh
 docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345 \
 --name my-mysql -v /var/lib/mysql mysql \
 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 ```
 
-### Run mongo in docker container
+## Run mongo in docker container
 ```sh
 docker run -it -v /home/user/mongodata:/data/db -p 27017:27017 --name mongodb -d mongo
 ```
 
-### Copy sql dump to container
+## Copy sql dump to container
 ```sh
 docker cp ~/Desktop/dump.sql [container id or name]:/path/create.sql
 ```
 
-### Show all processes
+## Show all processes
 ```sh
 docker ps -a
 ```
 
-### Start/stop container
+## Start/stop container
 ```sh
 docker start container_id
 docker stop container_id
 ```
 
-### Remove container
+## Remove container
 ```sh
 docker rm --force container_id
 ```
 
-### Execute commands in container 
+## Execute commands in container 
 ```sh
 docker exec -it container_id bash 
 ```
 
-### Copy file to container
+## Copy file to container
 ```sh
 docker cp ./localfile.sql containername:/container/path/file.sql
 ```
 
-### Show commands & management commands
-```
-docker
-```
-
-### Docker version info
-```
-docker version
-```
-
-### Show info like number of containers, etc
+## Show info like number of containers, etc
 ```
 docker info
 ```
 
-# Working with containers
+## Images
+### List the images we have pulled
+```
+docker image ls
+```
+
+### We can also just pull down images
+```
+docker pull [IMAGE]
+```
+
+### Remove image
+```
+docker image rm [IMAGE]
+```
+
+### Remove all images
+```
+docker rmi $(docker images -a -q)
+```
+
+{% hint style=warning %}
+About images
+
+- Images are app bianaries and dependencies with meta data about the image data and how to run the image
+- Images are no a complete OS. No kernel, kernel modules (drivers)
+- Host provides the kernel, big difference between VM
+{% endhint %}
+
+
+## Containers
 
 ### Create an run a container in foreground
-
 ```
 docker container run -it -p 80:80 nginx
 ```
 
 ### Create an run a container in background
-
 ```
 docker container run -d -p 80:80 nginx
 ```
 
-### Naming Containers
-
+### Naming containers
 ```
 docker container run -d -p 80:80 --name nginx-server nginx
 ```
@@ -122,7 +137,6 @@ What run did
 {% endhint %}
 
 ### List running containers
-
 ```
 docker container ls
 
@@ -130,55 +144,46 @@ docker ps
 ```
 
 ### List all containers (Even if not running)
-
 ```
 docker container ls -a
 ```
 
 ### Stop container
-
 ```
 docker container stop [ID]
 ```
 
 ### Stop all running containers
-
 ```
 docker stop $(docker ps -aq)
 ```
 
 ### Remove container (Can not remove running containers, must stop first)
-
 ```
 docker container rm [ID]
 ```
 
 ### To remove a running container use force(-f)
-
 ```
 docker container rm -f [ID]
 ```
 
 ### Remove multiple containers
-
 ```
 docker container rm [ID] [ID] [ID]
 ```
 
 ### Remove all containers
-
 ```
 docker rm $(docker ps -aq)
 ```
 
 ### Get logs (Use name or ID)
-
 ```
 docker container logs [NAME]
 ```
 
 ### List processes running in container
-
 ```
 docker container top [NAME]
 ```
@@ -188,90 +193,22 @@ About containers
 
 Docker containers are often compared to virtual machines but they are actually just processes running on your host os. In Windows/Mac, Docker runs in a mini-VM so to see the processes youll need to connect directly to that. On Linux however you can run "ps aux" and see the processes directly
 {% endhint %}
-
-# Image commands
-
-### List the images we have pulled
-
-```
-docker image ls
-```
-
-### We can also just pull down images
-
-```
-docker pull [IMAGE]
-```
-
-### Remove image
-
-```
-docker image rm [IMAGE]
-```
-
-### Remove all images
-
-```
-docker rmi $(docker images -a -q)
-```
-
-{% hint style=warning %}
-About images
-
-- Images are app bianaries and dependencies with meta data about the image data and how to run the image
-- Images are no a complete OS. No kernel, kernel modules (drivers)
-- Host provides the kernel, big difference between VM
-{% endhint %}
-
-### Some sample container creation
-nginx:
-
-```
-docker container run -d -p 80:80 --name nginx nginx (-p 80:80 is optional as it runs on 80 by default)
-```
-
-apache:
-
-```
-docker container run -d -p 8080:80 --name apache httpd
-```
-
-mongo:
-
-```
-docker container run -d -p 27017:27017 --name mongo mongo
-```
-
-mysql:
-
-```
-docker container run -d -p 3306:3306 --name mysql --env MYSQL_ROOT_PASSWORD=123456 mysql
-```
-
-# Container info
-
 ### View info on container
-
 ```
 docker container inspect [NAME]
 ```
 
 ### Specific property (--format)
-
 ```
 docker container inspect --format '{{ .NetworkSettings.IPAddress }}' [NAME]
 ```
 
 ### Performance stats (cpu, mem, network, disk, etc)
-
 ```
 docker container stats [NAME]
 ```
 
-# Accessing containers
-
 ### Create new nginx container and bash into
-
 ```
 docker container run -it --name [NAME] nginx bash
 ```
@@ -279,14 +216,7 @@ docker container run -it --name [NAME] nginx bash
 - i = interactive Keep STDIN open if not attached
 - t = tty - Open prompt
 
-**For Git Bash, use "winpty"**
-
-```
-winpty docker container run -it --name [NAME] nginx bash
-```
-
 ### Run/Create Ubuntu container
-
 ```
 docker container run -it --name ubuntu ubuntu
 ```
@@ -294,25 +224,21 @@ docker container run -it --name ubuntu ubuntu
 **(no bash because ubuntu uses bash by default)**
 
 ### You can also make it so when you exit the container does not stay by using the -rm flag
-
 ```
 docker container run --rm -it --name [NAME] ubuntu
 ```
 
 ### Access an already created container, start with -ai
-
 ```
 docker container start -ai ubuntu
 ```
 
 ### Use exec to edit config, etc
-
 ```
 docker container exec -it mysql bash
 ```
 
 ### Alpine is a very small Linux distro good for docker
-
 ```
 docker container run -it alpine sh
 ```
@@ -320,60 +246,52 @@ docker container run -it alpine sh
 (use sh because it does not include bash)
 (alpine uses apk for its package manager - can install bash if you want)
 
-# Networking
+## Networking
 
 ### "bridge" or "docker0" is the default network
 
 ### Get port
-
 ```
 docker container port [NAME]
 ```
 
 ### List networks
-
 ```
 docker network ls
 ```
 
 ### Inspect network
-
 ```
 docker network inspect [NETWORK_NAME]
 # ("bridge" is default)
 ```
 
 ### Create network
-
 ```
 docker network create [NETWORK_NAME]
 ```
 
 ### Create container on network
-
 ```
 docker container run -d --name [NAME] --network [NETWORK_NAME] nginx
 ```
 
 ### Connect existing container to network
-
 ```
 docker network connect [NETWORK_NAME] [CONTAINER_NAME]
 ```
 
 ### Disconnect container from network
-
 ```
 docker network disconnect [NETWORK_NAME] [CONTAINER_NAME]
 ```
 
 ### Detach network from container
-
 ```
 docker network disconnect
 ```
 
-# Image tagging & pushing to dockerhub
+## Image tagging & pushing to dockerhub
 ### Tags are labels that point ot an image ID
 ```
 docker image ls
@@ -386,12 +304,8 @@ docker image tag nginx user/nginx
 
 ### Upload to dockerhub
 ```
-docker image push user/nginx
-```
-
-### If denied, do
-```
 docker login
+docker image push user/nginx
 ```
 
 ### Add tag to new image
@@ -426,7 +340,7 @@ Cache & order
 
 {% endhint %}
 
-# Extending dockerfile
+## Extending dockerfile
 
 ### Custom Dockerfile for html paqge with nginx
 
@@ -437,19 +351,16 @@ COPY index.html index.html
 ```
 
 ### Build image from Dockerfile
-
 ```
 docker image build -t nginx-website
 ```
 
 ### Running it
-
 ```
 docker container run -p 80:80 --rm nginx-website
 ```
 
 ### Tag and push to Dockerhub
-
 ```
 docker image tag nginx-website:latest user/nginx-website:latest
 ```
@@ -458,7 +369,7 @@ docker image tag nginx-website:latest user/nginx-website:latest
 docker image push use/nginx-website
 ```
 
-# Volumes
+## Volumes
 
 {% hint style=warning %}
 - Volume - Makes special location outside of container UFS. Used for databases
@@ -517,7 +428,7 @@ docker container run -d --name mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=TRUE -v mysql
 docker volume inspect mysql-db
 ```
 
-# Bind mounts
+## Bind mounts
 - Can not use in Dockerfile, specified at run time (uses -v as well)
 - ... run -v /Users/user/stuff:/path/container (mac/linux)
 - ... run -v //c/Users/user/stuff:/path/container (windows)
@@ -543,7 +454,7 @@ ls -al
 touch test.txt
 ```
 
-# Docker compose
+## Docker compose
 - Configure relationships between containers
 - Save our docker container run settings in easy to read file
 - 2 Parts: YAML File (docker.compose.yml) + CLI tool (docker-compose)
@@ -552,9 +463,6 @@ touch test.txt
 - containers
 - networks
 - volumes
-
-###  docker-compose CLI
-Used for local dev/test automation with YAML files
 
 ### Sample compose file (From Bret Fishers course)
 ```
