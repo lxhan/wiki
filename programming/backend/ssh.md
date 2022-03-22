@@ -1,4 +1,4 @@
-# SSH key
+## SSH key
 
 ### Generate SSH keys
 1. Generate key `ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`

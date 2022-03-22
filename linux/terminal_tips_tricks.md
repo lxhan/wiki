@@ -1,7 +1,4 @@
-# Terminal tips & tricks
-
 ## Everything in `src` folder and everything in every folder
-
 ```sh
 src/**/*
 ```
@@ -50,7 +47,6 @@ urxvt --help 2>&1 | grep font
 
 ## Install `.deb` package
   1. Depackage
-
      ```sh
      sudo dpkg -i /path/to/deb/file
      ```
@@ -58,7 +54,6 @@ urxvt --help 2>&1 | grep font
      When dpkg install a package and package dependency is not satisfied, it leaves the package in unconfigured state and that package is considered as broken.
 
   2. Install
-
      ```sh
      sudo apt-get install -f
      ```
