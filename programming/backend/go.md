@@ -1,16 +1,10 @@
-# Go
-
 
 ## Project structure
 
 ```
 workspace
-+---bin
-+---src
-    +---github.com
-        +---lxhan
-            +---go project 1
-            +---go project 2
++---cmd
++---internal
 +---pkg
 ```
 
@@ -380,4 +374,5 @@ func main() {
 - [Data types](https://www.8host.com/blog/osnovnye-tipy-dannyx-v-go/)
 - [Data types cheat sheet](https://rtfm.co.ua/books-translations/go-s-nulya/go-chast-3-tipy-dannyx/)
 - [Another data type cheat sheet](https://metanit.com/go/tutorial/2.3.php)
+- [Go project layout](https://github.com/golang-standards/project-layout)
   
