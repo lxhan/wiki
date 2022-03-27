@@ -71,3 +71,21 @@ Dijkstra's algorithm has 4 steps:
 - For negative weights use Bellman-Ford algorithm
 
 ### Greedy algorithms
+
+- Greedy algorithms optimize locally, hoping to end up with a global optimum
+- NP-complete problems have no known fast solution
+- For NP-complete problems use approximation algorithm
+
+### Dynamic programming
+
+- Dynamic programming is useful when you are trying to optimize something given a constraint
+- You can use DP when the problem can be broken into discrete subproblems
+- Every DP solution involves a grid
+- The values in the cells are usually what you are trying to optimize
+- Each cell is a subproblem
+- There is no single formula for calculating a DP solution
+
+Uses cases:
+- The longest common subsequence is being used to find similarities in DNA strands
+- git diff
+- Levenstein distance
