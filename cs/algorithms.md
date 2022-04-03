@@ -1,4 +1,4 @@
-## Notes from `Grokking algorithms`
+[##](##) Notes from `Grokking algorithms`
 
 ### Intro
 
@@ -89,3 +89,10 @@ Uses cases:
 - The longest common subsequence is being used to find similarities in DNA strands
 - git diff
 - Levenstein distance
+
+### K-nearest neighbors
+
+- KNN is used for classification and regression and involves looking at the k-nearest neighbors
+- Classification = categorization into a group
+- Regression = predicting a response
+- Feature extraction means converting an item into a list of numbers that can be compared
