@@ -2,13 +2,21 @@
 
 ### Intro
 
-- Binary search is a lot faster than simple search.
 - `O(log n)` is faster than `O(n)`, but it gets a lot faster once the list of items you are searching through grows.
 - Algorithm speed isn't measured in seconds.
 - Algorithm times are measured in terms of growth of an algorithm.
 - Algorithm times are written in Big O notation.
 
+### Binary search
+
+Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one
+
+- Binary search is a lot faster than simple search.
+
+
 ### Selection sort
+
+In selection sort, the first smallest element is selected from the unsorted array and placed at the first position. After that second smallest element is selected and placed in the second position. The process continues until the array is entirely sorted.
 
 - Computer's memory is like a giant set of drawers.
 - When you want to store multiple elements, use an array or a list.
@@ -27,6 +35,8 @@
 - The call stack can get very large, which may lead to stack overflow.
 
 ### Quick sort
+
+Quick sort is a fast sorting algorithm that works by splitting a large array of data into smaller sub-arrays. This implies that each iteration works by splitting the input into two components, sorting them, and then recombining them.
 
 - Divide & conquer works by breaking a problem down into smaller and smaller pieces. If you are using D&C on a list, the base case is probably an empty array with one element.
 - If you are implementing quicksort, choose a random element as the pivot. The average runtime of quicksort is `O(n log n)`.

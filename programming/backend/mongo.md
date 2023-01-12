@@ -310,4 +310,81 @@ db.posts.aggregate([
         }
     }
 ])
+
+```
+
+## test
+```js
+export const lockInactive = async () => {
+  logger.info('locking inactive process - start');
+  try {
+    const orders = await Orders.aggregate([
+      {
+        $group: {
+          _id: '$metaData.vendor',
+          latestOrder: {
+            $max: {
+              createdAt: '$createdAt',
+              _id: '$_id',
+            },
+          },
+        },
+      },
+      {
+        $addFields: {
+          name: '$_id',
+        },
+      },
+      {
+        $project: {
+          _id: 0,
+          createdAt: '$latestOrder.createdAt',
+          locationName: '$name',
+        },
+      },
+    ]);
+    const threeMonthsBefore = moment().subtract(3, 'months');
+    const locationsToLock = orders
+      .map((order) => {
+        if (moment(order.createdAt).isBefore(threeMonthsBefore)) {
+          return order.locationName;
+        }
+        return null;
+      })
+      .filter((location) => location);
+
+    await Promise.all(
+      locationsToLock.map(async (locationName) => {
+        const location = await Locations.findOne(
+          {
+            $or: [
+              { restaurantName: locationName },
+              { locationNameHistory: locationName },
+            ],
+            'modules.0': { $exists: true },
+          },
+          { modules: 1, owner: 1 }
+        );
+        const merchant = await Merchant.findById(location.owner, {
+          users: 1,
+          subscription: 1,
+        });
+        if (!merchant.subscription?.active) {
+          const user = await User.findById(merchant.users[0], { blocked: 1 });
+          if (user.blocked === false) {
+            user.set('blocked', true);
+            await user.save();
+            location.set('modules', []);
+            return location.save();
+          }
+        }
+        return location;
+      })
+    );
+
+    logger.info('locking inactive process - end');
+  } catch (err) {
+    logger.error(err);
+  }
+};
 ```
